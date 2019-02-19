@@ -1,0 +1,1586 @@
+\documentclass[12pt,a4paper,twoside,onecolumn,openany]{report}
+\usepackage{polski}
+\usepackage{enumerate}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage[top=2cm,bottom=2cm, left=3cm, right=3cm]{geometry}
+
+
+
+\begin{document}
+
+\begin{abstract}
+Streszczenie pracy magisterskiej pt. "Zastosowanie zbiornika wody o dużej objętości jako akumulatora energii cieplnej w systemie ogrzewania budynku"\\
+
+\indent Niniejsza praca przedstawia koncepcję rozwiązania oraz obliczenia projektowe systemu grzewczego, pozwalającego zapewnić komfort cieplny w domu jednorodzinnym w~okresie zapotrzebowania na ciepło. System ten złożony jest z zaizolowanego cieplnie zbiornika, umieszczonego w gruncie i pełniącego rolę akumulatora ciepła. Zbiornik ten zasilany jest układem kolektorów słonecznych, wykorzystujących promieniowanie słoneczne, jako odnawialne źródło energii. \\
+\indent W pierwszej części pracy poruszono temat magazynowania energii. Przedstawiono i omówiono najczęstsze sposoby akumulacji ciepła oraz wskazano podstawowe problemy, związane z tym zagadnieniem. Następnie poświęcono uwagę jednemu z~najbardziej popularnych sposobów magazynowania energii cieplnej z wykorzystaniem pojemności cieplnej wody i opisano problem projektu. Przedstawiono konstrukcję zbiornika, dobór materiałów izolacyjnych, miejsce położenia budynku oraz warunki klimatyczne i związane z nimi średnie temperatury otoczenia. W pracy dołączono również zdjęcia przedstawiające budowę zbiornika akumulacyjnego realizowaną przez inwestora, dla którego wykonywane zostały obliczenia projektowe. Pierwszy etap budowy, który obejmował budowę zbiornika, właśnie został zakończony. Drugi etap, czyli budowa domu i zainstalowanie instalacji solarnej planowany jest na lato 2018. W następnym rozdziale opisano podstawowe prawa i pojęcia wymiany ciepła, niezbędne do wykonania obliczeń bilansowych zbiornika w dlaszej części pracy. W~kolejnym kroku, po wykonaniu analizy cieplnej pozwalającej określić całkowite straty, wyznaczono wydajność grzewczą kolektorów, a także wykonano obliczenia w~celu określenia wymaganej minimalnej ilości urządzeń oraz ich optymalnych parametrów pracy. \\
+\indent Końcowa część pracy obejmuje analizę projektu pod kątem efektywności, wydajności oraz opłacalności. Wykonano obliczenia korekcyjne, uwzględniające warunki klimatyczne i związaną z nim średnią temperaturę absorbera w okresie działania kolektora, całkowite zapotrzebowanie budynku na ciepło, jak również straty spowodowane przesyłem energii w obiegu instalacji. Zaproponowano także sposoby optymalizacji badanego układu. 
+
+
+\newpage
+
+\begin{center}
+    \textbf{Abstract} 
+\end{center}
+
+Summary of a thesis titled "Application of a large volume water tank as a heat energy accumulator in a single-family house heating system"\\
+
+\indent This thesis presents the concept of solution and design calculations of a heating system, which provides thermal comfort in a single-family house during the period of heat demand. This system consists of a thermally insulated tank, placed in the ground and acting as a heat accumulator. This tank is powered by solar collectors, which use solar radiation as a renewable energy source. \\
+\indent The first part of the paper deals with the topic of energy storage. The most common ways of accumulating heat and discussing basic problems related to this issue are presented and discussed.Then, one of the most popular ways of storing heat energy using water heat capacity was discussed and the design problem was described. The design of the tank, the choice of insulation materials, the location of the building, the climatic conditions and associated average ambient temperatures are presented. Also included are photographs showing the construction of an accumulation tank executed by the investor for which the design calculations were performed. The first stage of construction, which included the construction of the tank, has just been completed. The second stage, the construction of the house and the installation of the solar system, is planned for the summer of 2018. \\
+\indent The next chapter describes the basic principles and concepts of heat exchange necessary to perform the tank balance calculations in progress of the work. In the next step, the thermal performance of the collectors was determined after the thermal analysis was performed to determine the total losses, and calculations were made to determine the required minimum quantity of equipment and their optimum operating parameters. \\
+\indent The final part of the work includes project analysis in terms of efficiency, productivity and cost effectiveness. Correction calculations have been made taking into account the climatic conditions and the associated average absorber temperature during the collector operating period, total heat demand as well as losses due to energy transfer in the system circuit. The methods of optimization of the examined system were also proposed. \\
+
+
+\end{abstract}
+
+\newpage\thispagestyle{empty}
+\mbox{}
+\newpage
+
+\tableofcontents
+
+\chapter{Wstęp}
+\section{Energia i jej formy}
+\subsection{Definicja energii}
+Energia najczęściej kojarzona jest z pracą lub ciepłem. Mimo, że jednostki tych wielkości są jednakowe, to nie należy wymienionych pojęć używać zamiennie. Energia jest skalarną wielkością ekstensywną, ściśle spełniającą prawo zachowania energii. Wielkośc ta określa w sposób ilościowy zachodzące procesy lub oddziaływania i~może występować w różnych formach. Warto podkreślić, że praca i ciepło nie jest postacią energii, a jedynie sposobem jej przekazywania \cite{szczygiel}. Skutkiem wykonania pracy przez pewien układ jest zmiana jego funkcji stanu, nazywanej energią, która jest właściwością materii. Każde ciało zawsze posiada pewną energię, w przypadku gdy ciepło i praca przestają istnieć w momencie zakończenia zjawiska wykonywania pracy czy przepływu ciepła. Nie nalezy więc mówić np. o ilości ciepła zawartego w ciele \cite{js}. Zawsze natomiast pozostaje skutek tych zjawisk, czyli zmiana energii ciała.
+
+\subsection{Rodzaje energii}
+Pojęcie energii jest na tyle skomplikowane, że nie istnieje ogólny sposób lub metoda jej klasyfikacji. Wyróżnić można natomiast cztery jej podstawowe grupy:
+
+\begin{itemize}
+    \item kinetyczna,
+    \item grawitacyjna,
+    \item wewnętrzna,
+    \item elektromagnetyczna.
+\end{itemize}
+Energię kinetyczną, grawitacyjną oraz wewnętrzną należy traktować jako energię o~charakterze substancjalnym.
+W przypadku problemów związanych z magazynowaniem energii, przyjmuje się jej podział na energię: mechaniczną, elektryczną, elektromagnetyczną, chemiczną, cieplną oraz jądrową. W grupie energii wewnętrznej znajduje się energia chemiczna, cieplna i jądrowa, natomiast energia mechaniczna związana jest zarówno z energią kinetyczną jak i energią grawitacji.
+
+\subsection{Konwersja energii}
+Dany rodzaj energii można wytworzyć, poprzez zastosowanie różnych technik, urządzeń lub maszyn. Istnieje również możliwość przekształcenia jednej formy energii w~inną. Taki proces przemiany energii w inną jej formę nazywa się konwersją energii. Poniżej przedstawiono możliwości wzajemnych przemian podstawowych rodzajów energii oraz wykorzystanych w tym celu procesów, urządzeń i maszyn.
+
+\begin{center}
+\textbf{Energia chemiczna} 
+\leftrightarrow
+\textbf{Energia cieplna} \\
+reakcje egzoenergetyczne (spalanie), gazyfikacja
+\end{center}
+
+\begin{center}
+\textbf{Energia cieplna}
+\leftrightarrow
+\textbf{Energia mechaniczna} \\
+silnik cieplny (np. turbina), tarcie 
+\end{center}
+ 
+\begin{center}
+\textbf{Energia mechaniczna}
+\leftrightarrow
+\textbf{Energia elektryczna} \\
+generator lub dynamo, silnik elektryczny
+\end{center}
+
+\begin{center}
+\textbf{Energia elektryczna}
+\leftrightarrow
+\textbf{Energia cieplna} \\
+grzałka, termogenerator
+\end{center}
+
+\begin{center}
+\textbf{Energia elektryczna}
+\leftrightarrow
+\textbf{Energia chemiczna} \\
+elektroliza, ogniwa paliwowe, baterie
+\end{center}
+
+\begin{center}
+\textbf{Energia promieniowania}
+\leftrightarrow
+\textbf{Energia elektryczna} \\
+ogniwa fotowoltaiczne, lampy fluoroscencyjne
+\end{center}
+
+\begin{center}
+\textbf{Energia promieniowania}
+\leftrightarrow
+\textbf{Energia cieplna} \\
+kolektory słoneczne, lampy żarzeniowe
+\end{center}
+
+\subsection{Energia słoneczna}
+Ze względu na duży potencjał tego rodzaju energii odnawialnej, możliwości jej wykorzystania są bardzo duże. Wykorzystanie energii promieniowania słonecznego pozwala przetworzyć ją na energię elektryczną w ogniwach fotowoltaicznych, biomasę (wykorzystywaną następnie jako paliwo) lub jej konwersję w kolektorach słonecznych na energię cieplną. Uzyskany rodzaj energii można wykorzystać bezpośrednio do grzania czynnika roboczego, chłodzenia, a także w innych procesach technologicznych. 
+W przypadku wykorzystania energii słonecznej w celach grzewczych, nie należy przekształcać jej najpierw w energię elektryczną, a następnie w cieplną, ponieważ sprawność tegoż procesu zmniejszy się. Energia promieniowania w celach ogrzewania będzie efektywniej wykorzystana, jeśli przetworzona będzie bezpośrednio w ciepło. \\
+\indent Praktyczne wykorzystanie energii słonecznej oraz efektywność jej przetworzenia uzależnione jest od warunków klimatycznych, szerokości geograficznej itp. Należy również pamiętać o cykliczności jej dostarczania oraz zmienności intensywności promieniowania w czasie. Mimo to systemy solarne wykorzystywane w celach magazynowania energii cieplnej są popularne na całym świecie. Jednak aby pracowały efektywnie, powinny być zaprojektowane tak, aby zapewniały stały dopływ energii do układu magazynującego.
+
+
+\section{Magazynowanie energii}
+
+Z roku na rok stale zwiększają się potrzeby energetyczne społećzeństwa. Ponadto cena paliw konwencjonalnych takich jak węgiel, ropa czy gaz, wykorzystywanych przez systemy energetyczne i ciepłownicze, nieustannie rośnie. Z tego powodu od wielu lat poruszany jest temat sposobów wytwarzania możliwie taniej energii oraz jej magazynowania. Najtańszą obecnie energią jest ta pochodzenia naturalnego. Do odnawialnych źródeł energii zalicza się energię promieniowania słonecznego, energię wody, wiatru, geotermalną czy biomasę. Systemy wykorzystujące odnawialne źródła energii cechują się zerową lub bardzo niską emisją zanieczyszczeń, a ich główną zaletą jest niewyczerpywalność. Z tych właśnie powodów, do roku 2020, planowany jest wrost udziału OZE w ogólnym bilansie energetycznym Polski do 14\%. \\
+\indent Poprzez magazynowanie energii należy rozumieć akumulację nadwyżek ciepła poprzez systemy bazujące na OZE, w celu jego wykorzystania w okresie deficytu. Na konstrukcję układu oraz sposób magazynowania ciepła największy wpływ ma dostępność źródła energii. Istotny jest również cel wykorzystania zmagazynowanego ciepła oraz jego ilość, temperatura a w szczególności czas ładowania i rozładowywania. W przypadku magazynowania ciepła energii słonecznej, o uzyskanej temperaturze decyduje typ stosowanych kolektorów słonecznych. Istnieje wiele sposobów magazynowania energii. W dalszej części pracy zostaną one omówione.
+
+\subsection{Sposoby magazynowania energii}
+W dzisiejszej energetyce magazynowanie ciepła jest opanowane, jeśli chodzi o problemy techniczne. W dodatku jest wiele wariantów rozwiązań. W 2021 roku, zgodnie z \emph{Rozporządzeniem Ministra Infrastruktury w sprawie warunków technicznych, jakim powinny odpowiadać budynki i ich usytuowanie}, wzrosną wymagania dotyczące oszczędności cieplnej budynków w celu zminimalizowania zużycia energii paliw pierwotnych. W związku z tym, aby spełnić te wymagania, konieczne jest efektywne oraz stałe zasilanie systemów grzewczych ciepłem wytworzonym z OZE. \\
+\indent Na rysunku poniżej przedstawiono termiczne sposoby magazynowania ciepła.\linebreak
+
+\begin{figure}[h] 
+% t - na górze str, b - u dołu str, h - w tym miejscu, p-na osobnej str
+\centering
+\includegraphics[width=10cm]a
+\caption{Schematyczny podział sposobów akumulacji energii cieplnej \cite{mec}.}
+\label{a}
+\end{figure}
+
+\indent Energię można magazynować poprzez wykorzystanie ciepła właściwego, ciepła będącego skutkiem przemian fazowych, odwracalnych reakcji chemicznych i fotochemicznych oraz podczas produkcji paliw. \\
+\indent Wykorzystując ciepło właściwe w celu magazynowania energii cieplnej stosować można ciała stałe i ciecze. Natomiast akumulacja ciepła na podstawie przemiany fazowej dotyczy najcześciej zmiany fazy ciało stałe-ciecz, a także ciecz-gaz. W przypadku cieplno-chemicznych układach akumulacji bazuje się na procesach sorpcyjnych oraz zjawiskach chemicznych \cite{tae}. Gromadzenie energii termicznej poprzez wykorzystanie pojemności cieplnej odpowiednich czynników lub materiałów, jest najprostszym technicznie sposobem akumulacji ciepła. Można tego dokonać na dwa sposoby:
+
+\begin{enumerate}[-]
+    \item \textbf{jawny} - dotyczy przyrostu temperatury ciała, bądź czynnika,
+    \item \textbf{utajony} - związany z przemianą fazową w warunkach izotermicznych.
+\end{enumerate}
+
+
+\subsection{Magazyny energii cieplnej}
+
+Na czas magazynowania energii wpływa wiele czynników. Najważniejszymi z nich jest rodzaj stosowanego systemu energetycznego oraz wielkości zapotrzebowania. \\ \indent Ciepło stanowiące przede wszystkim energię użytkową wymaga magazynowania zarówno~\textbf{krótkoterminowego STTS} (ang. Short Term Thermal Storage) jak i~\textbf{długoterminowego STES} (ang. Seasonal Thermal Energy Storage) \cite{mec}. Najczęściej stosowane jest krótkoterminowe, mające na celu wytworzenie ciepłej wody użytkowej lub wody do ogrzewania pomieszczeń. Systemy takie charakteryzują się mniejszą mocą, a przykładem mogą być bojlery zainstalowane zazwyczaj w piwnicy przy kotle grzewczym. W przypadku długoterminowej akumulacji ciepła wykorzystywane są zbiorniki wodne oraz stawy słoneczne. \\
+
+\indent W większości stref klimatycznych występuje problem różnicy czasu między podażą a popytem na energię cieplną, w~szczególności, jeśli chodzi o odnawialne źródła energii. Sezonowe magazyny ciepła STES pozwalają na gromadzenie ciepła w czasie, gdy pozyskiwane jest w nadmiarze, a następnie odzysk w wielotygodniowym, czy nawet wielomiesięcznym okresie. Przedstawia to rysunek poniżej.
+
+\begin{figure}[h] 
+% t - na górze str, b - u dołu str, h - w tym miejscu, p-na osobnej str
+\centering
+\includegraphics[width=13cm]b
+\caption{Schematyczny podział sposobów akumulacji energii cieplnej \cite{mec}.}
+\label{b}
+\end{figure}
+
+\indent Jako magazyny energii cieplnej rozumie się czasowe akumulatory energii termicznej w postaci gorącego lub zimnego czynnika w celu wykorzystania ciepła medium w późniejszym czasie, głównie w okresach szczytowego zapotrzebowania. Magazyny energii cieplnej (MEC) współpracują najczęściej z systemami hybrydowymi, wykorzystującymi potencjał odnawialnych źródeł energii. Zadaniem zbiorników ciepła zakumulowanego jest bilansowanie niezgodności nadmiaru energii i jej zapotrzebowania. Wybór technologii o jaką oparta będzie zasada działania MEC zależy między innymi od czasu trwania ładowania, ekonomii, pojemności cieplnej, wielkości strat ciepła oraz warunków klimatycznych. \\
+
+\indent Ilość energii cieplnej potrzebnej do naładowania zbiornika magazynowego wypełnionego czynnikiem, zależy przede wszystkim od pojemności cieplnej medium (lub materiału), jego masy oraz różnicy temperatur końcowej i początkowej. Całkowitą ilość energii dostarczonej do układu można wyrazić wzorem:
+
+\begin{equation}
+    Q=m\cdot \int_{T_1}^{T_2}c_p\cdot dT=m\cdot c_p\cdot \Delta T
+\end{equation}
+gdzie:
+
+\begin{enumerate}[-]
+    \item m - masa czynnika wypełniającego zbiornik,
+    \item $c_p$ - ciepło właściwe czynnika,
+    \item $T_1$ - temperatura początkowa czynnika,
+    \item $T_2$ - temperatura końcowa czynnika,
+    \item $\Delta T$ - różnica temperatury końcowej i początkowej.
+\end{enumerate}
+Przy znacznych zmianach skrajnych temperatur czynnika, wartość jego pojemności cieplnej, zależnej od temperatury i ciśnienia, należy wyznaczyć obliczając całkę. Jeżeli natomiast temperatura czynnika ulega niewielkim zmianom, ilość energii w~postaci ciepła przejętej przez czynnik oblicza się następująco:
+
+\begin{equation}
+    Q=m\cdot c_s_r\cdot \Delta T=m \cdot c_s_r\cdot (T_2-T_1)
+\end{equation}
+gdzie $c_s_r$ to średnia pojemność cieplna czynnika między jego temperaturą początkową, a końcową. Przy stałym ciśnieniu czynnika można to zapisać jak niżej:
+
+$$c_s_r=\frac{c_p(T_1)+c_p(T_2)}{2}$$
+
+\subsection{Akumulacja ciepła na podstawie ciepła właściwego}
+
+Jest to najprostsza metoda umożliwiająca długoterminowe magazynowanie energii cieplnej. Polega na ładowaniu akumulatora ciepła, będącego odpowiednio skonstruowanym zbiornikiem, poprzez podnoszenie temperatury czynnika (ciecz lub ciało stałe). Ilość ciepła zmagazynowanego zależna jest od rodzaju zastosowanego czynnika. Substancje, które należy rozpatrywać jako pierwsze podczas akumulacji ciepła jawnego są przede wszystkim woda, następnie oleje (np. krzemowe) i skały. W przypadku czynnika w postaci ciała stałego wyróżnić można materiały naturalne takie jak piaskowiec, marmur czy piasek.
+
+\emph{Ciepło właściwe} to wielkość fizyczna określająca ilość energii cieplnej potrzebnej do dostarczenia jednostce masy czynnika, aby zwiększyć jego temperaturę o 1K. \linebreak
+Rysunek \ref{c} przedstawia wartości ciepła właściwego wybranych cieczy i ciał stałych w odniesieniu do jednostki masy i objętości.
+
+\begin{figure}[h] 
+% t - na górze str, b - u dołu str, h - w tym miejscu, p-na osobnej str
+\centering
+\includegraphics[width=13cm]c
+\caption{Wartości pojemności cieplnych wybranych substancji \cite{tae}.}
+\label{c}
+\end{figure}
+Ze względu na wysoką pojemność cieplną, woda jest substancją posiadającą najlepsze właściwości akumulacyjne. Jej ciepło właściwe sprawia, że dostarczona do niej energia cieplna będzie długo w niej zatrzymana. Z drugiej strony wadą tego czynnika jest to, że trzeba dostarczyć dużo energii, aby zwiększyć jego temperaturę. Ponadto charakteryzuje się niską temperaturą akumulacji i wąskim zakresem temperatury przy ciśnieniu atmosferycznym ($\rm{0\div100^\circ C}$).
+
+\subsection{Problemy akumulacji ciepła}
+
+Zastąpienie pierwotnych nośników energii (paliw kakopalnych) przez odnawialne źródła energii w dużym systemie energetycznym jest problematyczne ze względu na trudności techniczne, a czasem w ogóle niemożliwe. Największe problemy stanowi magazynowanie dużej ilości energii elektrycznej lub wodoru, będącego najbardziej obiecującym gazem technicznym ze względu na swoje korzystne  właściwości energetyczne. \\
+\indent Energię można magazynować w niskotemperaturowych układach biernych (zbiorniki), a także w większych układach zasilających elektrownie konwencjonalne lub procesy technologiczne w których wymagana jest wysoka temperatura \cite{rd}. Problematyka magazynowania energii cieplnej skupia się głównie wokół zagadnień wymiany ciepła, jego strat, trudności konstrukcyjnych, analizy ekonomicznej systemu oraz bezpieczeństwa projektowanego układu. Najistotniejszym problemem jest jednak niezgodność ilości energii dostarczanej, a zapotrzebowaniem na energię w danym czasie. Ciepła potrzebujemy zimą, natomiast pozbywamy się go latem. Ponadto niemożliwym jest stworzenie takiego układu magazynującego energię, w którym automatycznie regulowana będzie jego wydjaność oraz zapotrzebowanie na energię. Z~powodu różnic między ilością poboru energii a zapotrzebowaniem, nieodzowne stało się jej akumulowanie.
+
+\chapter{Wprowadzenie}
+Dzisiejsza energetyka oferuje wiele wariantów rozwiązań technicznych systemów magazynowania ciepła. Pozwalają one na korzystanie z zakumulowanego ciepła nie tylko przez kilka godzin, ale również przez okres dłuższy. Mogą to być tygodnie czy nawet miesiące. Celem jest ogrzewanie obiektów i pomieszczeń. \\
+\indent Najpopularniejsze rozwiązania opierają się na wykorzystaniu odnawialnych źródeł energii. Jednym z wielu sposobów wykorzystania energii słonecznej, a zarazem najpopularniejszym, jest system przygotowania ciepłej wody użytkowej (CWU) na potrzeby domowe. Zaletą tych instalacji jest prostota budowy, nieskomplikowana technologia i stosunkowo niskie nakłady inwestycyjne. Ponadto zapotrzebowanie na cwu jest w przybliżeniu stałe w ciągu roku. Przykładem są instalacje kolektorów słonecznych, pozyskujących ciepło z energii promieniowania słonecznego. Instalacja słoneczna tego typu działa cyklicznie, zarówno w~skali dobowej jak i w skali roku, gdy nadwyżka ciepła zmagazynowana w okresie letnim wykorzystywana jest w celach użytkowych w okresie jesienno-zimowym, kiedy zapotrzebowanie na ciepło rośnie. Najprostszy sposób magazynowania ciepła to układ zbiornika o dużej objętości, wypełnionego wodą przejmującą ciepło z systemu solarnego. 
+
+\section{Realizacja projektu}
+
+Głównym celem pracy jest koncepcja układu pozwalającego na akumulację nadmiaru energii cieplnej latem, aby następnie w okresie jesiennym wykorzystać ją jako ciepłą wodę użytkową w domku jednorodzinnym. Niezbędne jest wykonanie obliczeń projektowych systemu solarnego, składającego się z zespołu kolektorów słonecznych, których zadaniem będzie podgrzanie czynnika wypełniającego zbiornik do wymaganej temperatury, a następnie jej utrzymywanie. 
+\subsection{Zakres pracy}
+Ukad złożony będzie z~współpracujących kolektorów, zbiornika oraz rur doprowadzających i odprowadzających tworzących hydraulikę zespołu. Realizacja celu pracy wymaga wykonania następujących czynności:
+
+\begin{itemize}
+    \item przegląd i wybór odpowiednich materiałów konstrukcyjnych zbiornika, określenie miejsca umieszczenia, a także przedstawienie jego budowy, kształu, wymiarów oraz objętości,
+    \item określenie grubości izolacji zbiornika oraz parametrów jego otoczenia, głównie średnich temperatur występujących w założonym okresie jego zasilania,
+    \item poruszenie tematyki wymiany ciepła w celu wykonania obliczeń, pozwalających wyznaczyć wielkość strat cieplnych zasobnika ciepła,
+    \item wyznaczenie wymaganej wydajności grzewczej urządzeń zasilających zbiornik (na podstawie wykonanych obliczeń cieplnych) w celu zbilansowania układu,
+    \item przeprowadzenie odpowiednich obliczeń projektowych, pozwalających określić optymalne warunki pracy kolektora słonecznego, jego moc i straty cieplne oraz potrzebną ilość kolektorów słonecznych,
+    \item wykonanie obliczeń sprawdzających w celu wyznaczenia możliwego czasu ogrzewania pomieszczeń domku jednorodzinnego, ciepłem zmagazynowanym w zasobniku.  
+    
+\end{itemize}
+
+\section{Opis problemu}
+
+Każda instalacja solarna do przygotowania ciepłej wody użytkowej powinna składać się z następujących elementów: kolektor słoneczny absorbujący promieniowanie słoneczne, zbiornik magazynujący ciepło, układ transportujący czynnik w obiegu instalacji, złożony z rurociągów doprowadzających, pomp wymuszających przepływ oraz wymienników ciepła, a także z układu pomiarowego,  kontrolno-sterującego i~armatury pomocniczej. Często również dołącza się pomocniczy podgrzewacz wody. System taki przedstawia schemat zamieszczony poniżej.
+
+\begin{figure}[h] 
+% t - na górze str, b - u dołu str, h - w tym miejscu, p-na osobnej str
+\centering
+\includegraphics[width=12.5cm, height=9.5cm]d
+\caption{Schemat słonecznej instalacji energetycznej z przepływem wymuszonym do przygotowania ciepłej wody użytkowej \cite{sie}.}
+\label{d}
+\end{figure}
+
+\subsection{Założenia projektowe}
+W pracy skupiono się przede wszystkim na urządzeniom pozyskującym energię ze słońca oraz magazynowi ciepła. Przyjęto, że w instalacji obieg będzie wymuszony z~wydzielonym obiegiem pierwotnym (kolektorowym). To znaczy, że czynnikiem płynącym w kanałach kolektora będzie mieszanka woda-glikol o odpowiednim stężeniu. Kolektory słoneczne umieszczone będą na dachu od strony południowej, natomiast zbiornik umieszczony będzie w gruncie, możliwie blisko budynku. \\
+\indent U dołu zasobnika wypełnionego wodą, umieszczony zostanie wymiennik ciepła w~kształcie wężownicy spiralnej. Wewnątrz rur wymiennika wykonanych z miedzi (ze względu na bardzo dobrą przewodność cieplną tego materiału), będzie przepływała mieszanka, oddająca ciepło do wody. \\
+\indent Konstrukcja zbiornika magazynowego, wykonana z wodoszczelnej mieszanki betonu komórkowego oraz poszczególnych warstw odpowiedniej izolacji termicznej, całkowicie usadowiona będzie w gruncie. Model zbiornika przedstawiono na rysunku poniżej.
+
+\begin{figure}[h] 
+% t - na górze str, b - u dołu str, h - w tym miejscu, p-na osobnej str
+\centering
+\includegraphics[width=10cm]e
+\caption{Przekrój modelu zbiornika wykonanego w programie \emph{Solid Edge ST9}.}
+\label{e}
+\end{figure}
+\noindent Ścianę boczną oraz dno w kolejności od wewnątrz zbiornika tworzą następujące materiały: szkło, żywica, beton komórkowy, warstwa drewna oraz gumowa wykładzina. Zbiornik przykryty jest od góry szklaną płytą nad którą umieszczony jest styropian, a całość przykrywa również warstwa wykładziny gumowej. Wymiary wewnętrzne zasobnika z wodą, grubości warstw materiałów oraz ich właściwości termiczne przedstawione zostaną w części obliczeniowej pracy. \\
+\indent Jako urządzenia podgrzewające pośrednio wodę w zbiorniku przyjęto płaskie kolektory słoneczne. W dalszej części pracy na podstawie obliczeń określone zostaną optymalne parametry pracy kolektora. 
+
+\newpage
+Bilans zbiornika prowadzony będzie dla modelu przedstawionego na rysunku powyżej w celu uproszczenia wykonywanych obliczeń. Rzeczywisty kształt zbiornika przedstawiono poniżej:
+
+\begin{figure}[h] 
+\centering
+\includegraphics[width=9cm]n
+\caption{Przekrój poziomy i wymiary rzeczywiste zbiornika.}
+\label{przekroj}
+\end{figure}
+
+\begin{figure}[h] 
+\centering
+\includegraphics[width=9.5cm]p
+\caption{Przekrój poprzeczny szalowania zbiornika.}
+\label{przekroj}
+\end{figure}
+
+\noindent Tematem wykonywanej pracy jest rzeczywista budowa układu skłądającego się ze zbiornika i systemu solarnego, mającego zasilać domek jednorodzinny. Oto zdjęcia z~dotychczasowych postępów pracy.
+
+\begin{figure}[h] 
+\centering
+\includegraphics[width=13.5cm]o
+\caption{Pierwszy etap budowy - przygotowanie miejsca.}
+\label{przekroj}
+\end{figure}
+
+\begin{figure}[h] 
+\centering
+\includegraphics[width=13.5cm]r
+\caption{Pierwszy etap budowy - fundament.}
+\label{przekroj}
+\end{figure} 
+
+\begin{figure}[h] 
+\centering
+\includegraphics[width=13.5cm]s
+\caption{Pierwszy etap budowy - ściany boczne.}
+\label{przekroj}
+\end{figure}
+
+\begin{figure}[h] 
+\centering
+\includegraphics[width=13.5cm]t
+\caption{Pierwszy etap budowy - izolacja.}
+\label{przekroj}
+\end{figure}
+
+\begin{figure}[h] 
+\centering
+\includegraphics[width=13.5cm]u
+\caption{Pierwszy etap budowy - sufit zbiornika.}
+\label{przekroj}
+\end{figure}
+
+\chapter{Wymiana ciepła}
+\section{Podstawowe prawa i pojęcia}
+W przypadku zbiornika wypełnionego wodą o temperaturze podwyższonej w stosunku do temperatury jego otoczenia, niezbedne jest wykonanie bilansu w celu określenia całkowitych strat cieplnych. Wiąże się to przede wszystkim z wyznaczeniem gęstości strumieni ciepła przenikającego przez poszczególne ściany zasobnika. Problematyką tego typu zajmuje się wymiana ciepła. \\
+\indent Zjawisko przepływu ciepła występuje zawsze tam, gdzie występuje gradient temperatury (różnica temperatur). Warto podkreślić, że im większa jest ta różnica, tym intensywniejszy proces wymiany ciepła. Wyróżnić można trzy podstawowe sposoby wymiany ciepła: przewodzenie, konwekcję i promieniowanie. Bilans magazynu ciepła prowadzony będzie na podstawie konwekcji swobodnej.
+
+
+\subsection{Przewodzenie ciepła}
+
+Przewodzenie ciepła zachodzi w materiale przegrody między temperaturami jej powierzchni. Istotny wpływ na intensywność wymiany ciepła na drodze przewodzenia mają właściwości termiczne materiału oraz grubość przegrody. Przewodzenie wynika z różnicy temperatu między powierzchniami przegrody. \\
+\indent W przypadku ustalonego przewodzenia ciepła, gęstość strumienia ciepła oblicza się zgodnie z poniższym wzorem:
+
+
+    \begin{equation}
+\dot{q}=\frac{\dot{Q}}{A}~,~\frac{W}{m^2}
+\label{gsc}
+\end{equation}
+gdzie $\dot Q$ to całkowity strumień ciepła, natomiast $A$ to pole powierzchni przegrody. \\
+
+\noindent Przewodzenie ciepła opisuje \emph{Prawo Fouriera}, wyrażone równaniem:
+\begin{equation}
+\dot{q}=-\lambda~grad~t~,~\frac{W}{m^2}
+\end{equation}
+Gęstość strumienia ciepła w przypadku przewodzenia przez przegrodę jednowarstwową płaską o grubości $\delta$ oblicza się według wzoru:
+\begin{equation}
+\dot{q}=\frac{t_w_1-t_w_2}{\frac{\delta}{\lambda}}~,~\frac{W}{m^2}
+\label{fourier}
+\end{equation}
+gdzie $t_w$ są temperaturami powierzchni przegrody, spełniającymi następującą nierówność $t_w_1 > t_w_2$, a $\lambda$ to \emph{współczynnik przewodzenia ciepła}. Wielkość ta jest własnością fizyczną materiału i określa jego zdolność do przewodzenia ciepła. Im wyższa jego wartość, tym materiał lepiej przewodzi ciepło. \\
+
+\noindent Stosunek, który występuje w mianowniku równania \ref{fourier} nazywa się \emph{oporem cieplnym przewodzenia}. Zależy od rodzaju i grubości warstwy materiału.
+
+\begin{equation}
+R_\lambda=\frac{\delta}{\lambda}~,~\frac{m^2 K}{W}
+\end{equation}
+Jeżeli przegroda płaska wykonana jest z wielu różnych warstw materiału oraz o~różnej grubości, gęstość strumienia ciepła oblicza się według wzoru:
+
+\begin{equation}
+\dot{q}=\frac{t_w_1-t_w_n_+_1}{\sum_{i=1}^{n} R_\lambda_i}~,~\frac{W}{m^2}
+\end{equation}
+
+\subsection{Przenikanie ciepła}
+O przenikaniu ciepła mówimy wtedy, gdy przepływ ciepła zachodzi między płynami oddzielonymi przegrodą \cite{kostowski}. Przenikanie można definiować jako zjawisko składające się z trzech procesów: wnikania ciepła od płynu do powierzchni przegrody, przewodzenie w materiale przegrody oraz przejmowanie (wnikanie) od powierzchni do płynu po drugiej stronie przegrody. \\
+\indent Aby wyznaczyć gęstość strumienia ciepła przenikającego przez przegrodę, należy posłużyć się \emph{równaniem Pecleta}:
+
+\begin{equation}
+\dot{Q}=k A\Delta t=kA(t_1-t_2)~,~W
+\label{pecleta}
+\end{equation}
+$k$ oznacza \emph{współczynnik przenikania ciepła}, a $t_1$ i $t_2$ to temperatura płynu odpowiednio przed i za przegrodą, gdzie $t_1 > t_2$.\\
+
+\noindent Schemat przenikania ciepła przez przegrodę płaską przedstawiono na rysunku niżej.
+
+\begin{figure}[h] 
+% t - na górze str, b - u dołu str, h - w tym miejscu, p-na osobnej str
+\centering
+\includegraphics[width=5cm]f
+\caption{Przenikanie ciepła przez przegrodę płaską dwuwarstwową \cite{kostowski}.}
+\label{f}
+\end{figure}
+
+\emph{Współczynnik przenikania ciepła} obejmuje wszystkie trzy procesy przepływu ciepła między płynami rozdzielonymi ścianką. Współczynnik ten definiuje się jako odwrotność całkowitego oporu cieplnego $R$, który jest sumą oporu wnikania od strony płynu do powierchni $R_\alpha_1$, wnikania od powierzchni do płynu po drugiej stronie przegrody $R_\alpha_2$ oraz opór przewodzenia $R_\lambda$ przez materiał.
+
+\begin{equation}
+R=R_\alpha_1+R_\lambda+R_\alpha_2=\frac{1}{\alpha_1}+\sum_{i=1}^{n} \frac{\delta_i}{\lambda_i}+\frac{1}{\alpha_2}~,~\frac{m^2K}{W}
+\label{R}
+\end{equation}
+
+\begin{equation}
+k=\frac{1}{R}~,~\frac{W}{m^2K}
+\label{k}
+\end{equation}
+
+\subsection{Konwekcja naturalna}
+
+Konwekcja jest związana z procesem wnikania ciepła od płynu do powierzchni ścianki przegrody i na odwrót. Dotyczy więc przepływu ciepła między powierzchnią a płynem. Konwekcję można wytłumaczyć jako przewodzenie ciepła w warstwie laminarnej i następnie jego unoszeniu spowodowanym różnicą gęstości. Cały ten proces określa się jako \emph{przejmowanie} albo \emph{wnikanie}. Zagadnienie konwekcji skupia się na zjawiskach przebiegających w warstwie przyściennej, gdzie różnice temperatur oraz prędkości unoszenia płynu są największe. \\
+\indent Ruch płynu wywołany jest różnicą gęstości na skutek zmiany temperatury. Powstaje przez to pole prędkości wynikające z sił wyporu, mających związek z rozszerzalnością termiczną czynnika \cite{kostowski}. \\
+
+\noindent Całkowity strumień ciepła wnikający od ścianki do płynu oblicza się ze wzoru wynikającego z \emph{prawa Newtona}:
+
+\begin{equation}
+\dot{Q}=\alpha A\Delta{t}=\alpha A(t_{s}-t_{p})~,~W
+\end{equation}
+w którym $\alpha$ jest \emph{współczynnikiem wnikania} lub \emph{przejmowania ciepła}, wielkość $\Delta{t}$ - różnicą średnich temperatur ścianki i płynu, natomiast $A$ - polem powierzchni na której wymiana ciepła zachodzi. \\
+
+\noindent \textbf{Współczynnik wnikania ciepła} \\
+
+Największe trudności w wymianie ciepła sprawia wyznaczenie prawidłowej wartości współczynnika przejmowania ciepła, ponieważ zależy on od wielu zmiennych. Zwiazany jest z parametrami panującymi w warstwie przyściennej, tzw. warstewką Prandtla. Na warstwę tą wpływają czynniki takie jak temperatura ścianki i płynu, prędkość płynu, jego gęstość, współczynnik przewodzenia ciepła i współczynnik lepkości, a także ciepło właściwe płynu. Ponadto podczas jego wyznaczania, istotny jest kształt powierzchni oraz wymiar charakterystyczny.
+
+$$\alpha=f(w, T_s, T_p, \lambda, C_p, \rho_p, \eta, \phi, L)$$
+Fizyczne właściwości płynu omywającego powierzchnię, nalezy obliczać dla średniej temperatury w warstwie przyściennej:
+
+\begin{equation}
+T_w_p=\frac{T_s+T_p}{2}
+\label{T_w}
+\end{equation}
+Określenie konwekcyjnego współczynnika przejmowania ciepła dokonuje się na podstawie liczb kryterialnych, wyznaczających charakter przepływu płynu. Charakter ten może być laminarny, przejściowy lub burzliwy. Współczynnik wnikania wyznacza się na podstawie równania kryterialnego na \emph{Liczbę Nusselta}:
+
+$$Nu=f(Re, Pr, Gr, K_g)$$
+Konieczne jest prawidłowe ustalenie zależności liczby Nusselta od pozostałych liczb kryterialnych, jakimi są: \emph{liczba Reynoldsa, Prandtla i Grashofa}.
+
+\section{Liczby kryterialne}
+Są to liczby bezwymiarowe, które charakteryzują dane zjawisko. W pracy prowadzone będą obliczenia zbiornika wypełnionego wodą. Czynnik ten nie będzie się poruszał, więc w tym przypadku dominującym zjawiskiem będzie konwekcja swobodna. W celu wyznaczenia współczynnika przejmowania, konieczna jest znajomość kilku liczb kryterialnych.
+
+\subsection{Liczba Grashofa}
+Liczba ta dotyczy konwekcji naturalnej. Określa podobieństwo sił wyporu, będących skutkiem zmiany gęstości płynu, wynikającej ze zmiany temperatury. Oblicza się ją według wzoru:
+
+\begin{equation}
+Gr=\frac{g \cdot L^3 \cdot \beta \cdot \Delta T}{\nu^2}
+\label{Gr}
+\end{equation}
+gdzie: $\Delta T=T_s-T_p$, jest różnicą między temperaturą ścianki i płynu, $g$ to przyspieszenie ziemskie, $L$ - wymiar charakterystyczny liniowy oraz $\nu$ - kinematyczny współczynnik lepkości. \\
+
+\subsection{Liczba Prandtla}
+Liczbę tę definiuje się jako bezwymiarową liczbę podobieństwa płynu. Charakteryzuje substancję, nie opisuje jednak zjawiska. Dotyczy właściwości fizycznych płynu. W~przypadku gazów jest prawie stała, a zmiana ciśnienia i temperatury nie wywołuje znacznego wpływu na jej wartość \cite{kostowski}. Jej wartość oblicza się zgodnie ze wzorem:
+
+\begin{equation}
+Pr=\frac{\mu \cdot C_p}{\lambda_p}
+\label{Pr}
+\end{equation}
+gdzie $\mu$ jest dynamicznym współczynnikiem lepkości płynu, $C_p$ to jego ciepło właściwe, natomiast $\lambda_p$ - przewodność cieplna płynu.
+
+\subsection{Liczba Rayleigha}
+Na podstawie \emph{liczby Rayleigha} określa się charakter przepływu płynu w warstwie przyściennej. Jest to iloczyn \emph{liczby Grashofa} i \emph{liczby Prandtla}. 
+
+\begin{equation}
+Ra=Gr\cdot Pr
+\label{Ra}
+\end{equation}
+
+\subsection{Liczba Nusselta}
+\emph{Liczbę Nusselta} jest liczbą podobieństwa określającą bezpośrednią wymianę ciepła. Opisuje przepływ ciepła w warstwie przyściennej. Na jej podstawie, po wcześniejszym obliczeniu jej wartości ze wzoru empirycznego, wyznacza się współczynnik przejmowania ciepła. Wyrażona jest jako stosunek oddawanego ciepła na drodze przejmowania, do ciepła oddawanego przez przewodzenie na granicy ciało stałe-płyn \cite{szczygiel}, zgodnie ze wzorem poniżej:
+
+\begin{equation}
+Nu=\frac{\alpha \cdot L}{\lambda_p}
+\label{Nu}
+\end{equation}
+gdzie $L$ to charakterystyczny wymiar liniowy zależny od kształtu powierzchni, a $\lambda_p$ to współczynnik przewodzenia ciepła płynu. \\
+
+\noindent W przypadku konwekcji swobodnej \emph{liczba Nusselta} zależy tylko od dwóch liczb kryterialnych:
+
+$$Nu=f(Gr, Pr)$$
+
+\chapter{Bilans cieplny}
+Pierwszą część pracy rozpoczęto od wykonania bilansu cieplnego zbiornika magazynującego energię w postaci ciepłej wody użytkowej. Celem jest wyznaczenie strat cieplnych na poszczególnych ścianach, a następnie określenie całkowitych strat na drodze przenikania przez poszczególne jego warstwy. Wykonane obliczenia w zakresie wymiany ciepła pozwolą w dlaszej części pracy dobrać ilość kolektorów słonecznych potrzebnych do wytworzenia mocy cieplnej w celu zbilansowania układu. Obliczenia prowadzono w programie \emph{Excel 2016}.
+
+\section{Konstrukcja zbiornika}
+Kształt zbiornika dobrano na podstawie przyjętej kubatury, natomiast materiały z~których powinien być wykonany zaproponowano zgodnie z zaleceniami, pozwalającymi ograniczyć straty energii cieplnej. Wzięto równiez pod uwagę ciężar zbiornika wypełnionego wodą, dlatego pod jego dnem znajduje się betonowa wylewka. Przyjęto również, że konstrukcja zbiornika jest zwarta i stabilna.\\
+
+\subsection{Wymiary wewnętrzne}
+Założeniem początkowym jest objętość zbiornika, której wartość przyjęto równą:
+$$V=49~m^3$$
+Na podstawie przyjętej kubatury zdecydowano, że zbiornik będzie w kształcie cylindra o następujących wymiarach wewnętrznych ($H$ -- wysokość, $d$ -- średnica):
+$$H=3,9~m$$
+$$d=4~m$$
+
+\subsection{Materiały i ich parametry}
+ Zbiornik magazynujący energię cieplną powinien być wykonany z materiałów przede wszystkim charakteryzujących się niską przewodnością cieplną. Opór cieplny jaki stawiają tego typu materiały minimalizuje wartość strat magazynowanego ciepła. W~tabeli \ref{material} przedstawiono informacje dotyczące materiałów z których wykonane zostaną ściany i izolacja zbiornika. 
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|} \hline
+        \textbf{Materiał:} & \textbf{Grubość} & \textbf{Przewodność cieplna} \\ \hline
+   $-$ & $\rm{\delta, m}$ & $\rm{\lambda, W/mK}$ \\ \hline
+   Szkło & 0,03 & 0,960 \\ \hline
+   Styropian & 0,15 & 0,045 \\ \hline
+   Żywica & 0,02 & 0,035 \\ \hline
+   Beton komórkowy & 0,15 & 0,350 \\ \hline
+   Sklejka drewniana & 0,03 & 0,200 \\ \hline
+   Guma naturalna & 0,03 & 0,130 \\ \hline
+    \end{tabular}
+    \caption{Grubość materiałów oraz ich przewodność cieplna.}
+    \label{material}
+\end{table}
+
+\section{Obliczenia strat ciepła}
+Wyznaczenie strumieni strat ciepła przenikającego przez ściany zbiornika wymaga znajomości wartości temperatur, między którymi zachodzi przepływ ciepła. Ma to fundamentalny wpływ na końcową wartość strat cieplnych. 
+
+\subsection{Parametry czynnika i otoczenia}
+Przyjęto, że czynnikiem magazynującym ciepło w zbiorniku, będzie woda, z uwagi na jej dużą pojemność cieplną. Przyjęto następujące parametry wody: \\
+
+\noindent Temperatura wody:
+$$T_w=65~^\circ C$$
+Jest to wymagana temperatura w celu wykorzystania jako ciepłej wody użytkowej. \\
+
+\noindent Ciśnienie wody:
+$$p_w=1000~hPa$$
+Zbiornik umieszczony jest w gruncie tak, że jedynie górna jego ściana ma kontakt z powietrzem. Za izolacją dna oraz ściany bocznej znajduje się grunt wilgotny. Wartości temperatur otoczenia zbiornika przedstawiono w tabeli poniżej.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|c|} \hline
+        \textbf{Otoczenie:} & \textbf{Temperatura} & \textbf{Temperatura bezwzględna} \\ \hline
+   $-$ & $\rm{t, ^\circ C}$ & $\rm{T, K}$ \\ \hline
+   powietrze & 7 & 280 \\ \hline
+   grunt & 8 & 281 \\ \hline
+    \end{tabular}
+    \caption{Temperatury otoczenia akwarium.}
+    \label{otoczenie}
+\end{table}
+Temperatura gruntu na głębokości kilku metrów jest mniej więcej stała przez cały rok i wynosi średnio $\rm{8\div11^\circ C}$. Obliczenia cieplne prowadzone będą dla średnich warunków atmosferycznych występujących w okresie październik-grudzień. Z tego powodu wybrano dolną wartość z przedziału temperatur gruntu, natomiast temperatura powietrza na poziomie $\rm{7^\circ C}$, to średnia temperatura występująca we Wrocławiu w okresie jesienno-zimowym.
+
+
+
+\subsection{Straty ciepła przez powierzchnię boczną}
+Powierzchnię boczną tworzą kolejno warstwa szkła, żywicy, betonu komórkowego, drewnianej sklejki oraz gumy naturalnej. Za warstwą gumy znajduje się wilgotny grunt. W takim przypadku współczynnik wnikania ciepła liczony jest tylko od strony wody, ponieważ wnikanie po stronie gruntu nie występuje - strumień ciepła jest tam rozpraszany. \\
+
+\textbf{Obliczenia geometryczne} \thispagestyle{plain}
+\begin{enumerate}[a)]
+\item Pole ściany bocznej:
+\begin{displaymath}
+A_b=\pi \cdot d\cdot H=\pi \cdot 4 \cdot 3,9=49,01~m^2
+\end{displaymath}
+
+\item Wymiar charakterystyczny: \\
+
+\noindent w przypadku cylindra usytuowanego pionowo, jako wymiar charakterystyczny przyjmuje się jego wysokość, co przedstawia rysunek poniżej
+
+ \begin{figure}[h]
+\centering
+\includegraphics[width=6cm, height=3.5cm]g
+\caption{Wymiar charakterystyczny cylindra pionowego \cite{cengel}.}
+\end{figure}
+$$L=H=3,9~m$$
+
+\textbf{Parametry wody}
+
+\item Wyznaczenie gęstości wody za pomocą programu \emph{CoolProp}: \\
+
+- temperatura wody
+$$T_w=338~K$$
+- gęstość wody
+$$\rho_w=980,60~\frac{kg}{m^3}$$
+
+\item Wyznaczenie gęstości wody w warstwie przyściennej (\emph{CoolProp}): \\
+
+temperatura ściany ze szkła, zwilżanej przez wodę, jest nieznana. Należy ją wstępnie założyć, spełniając następujący warunek: 
+$$T_s_1 < T_w$$
+Dla założonej temperatury (np. $\rm{337~K}$) prowadzono dalsze obliczenia. W końcowym etapie obliczeń wykonano pętlę iteracyjną, pozwalającą wyznaczyć rzeczywistą temperaturę ścianki. \\
+
+- temperatura ścianki po iteracji
+$$T_s_1=337,8~K$$
+ - gęstość wody przy ściance po iteracji
+ $$\rho_s_1=980,73~\frac{kg}{m^3}$$
+
+\item Współczynnik rozszerzalności objętościowej dla wody: \\
+
+współczynnik ten określa zmianę objętości $\Delta V$ płynu na skutek zmiany jego temperatury $\Delta T$ w stałym ciśnieniu:
+
+\begin{equation}
+\beta=\frac{\Delta V}{V}\cdot \frac{1}{\Delta T}
+\label{b}
+\end{equation}
+wyrażając za pomocą gęstości wzór przyjmie postać:
+\begin{equation}
+\beta=-\frac{1}{\rho_1}\frac{(\rho_1-\rho_2)}{(T_1-T_2)}
+\label{beta}
+\end{equation}
+gdzie $\rho_1 < \rho_2$ oraz $T_1>T_2$
+
+po podstawieniu wartości do wzoru \ref{beta} otrzymano
+$$\beta_w=-\frac{1}{980,60}\cdot\frac{(980,60-980,73)}{(338-337,8)}=0,00055~\frac{1}{K}$$
+
+\item Średnia temperatura wody w warstwie przyściennej:
+
+$$T_w_p=\frac{T_w+T_s_1}{2},~K$$
+po podstawieniu otrzymano wartość
+$$T_w_p=\frac{338+337,8}{2}=337,9~K$$
+
+\item Wyznaczenie gęstości wody w warstwie przyściennej (\emph{CoolProp}): \\
+
+- średnia temperatura wody
+$$T_w_p=337,9~K$$
+- średnia gęstość wody
+$$\rho_w_p=980,66~\frac{kg}{m^3}$$
+
+\item Dynamiczny współczynnik lepkości wody dla $T_w_p$ (\emph{CoolProp}): \\
+
+- temperatura wody
+$$T_w_p=337,9~K$$
+- ciśnienie wody
+$$p_w=1000~hPa$$
+- dynamiczny współczynnik lepkości
+$$\mu_w_p=0,00043~Pa\cdot s$$
+
+\item Kinematyczny współczynnik lepkości wody w warstwie przyściennej: \\
+
+\begin{equation}
+\nu=\frac{\mu}{\rho},~\frac{m^2}{s}
+\end{equation}
+
+$$\nu_w_p=\frac{0,00043}{980,66}=4,43*10^-^7~\frac{m^2}{s}$$
+
+\item Współczynnik przewodzenia ciepła wody w temp. $T_w$~(\emph{CoolProp}): \\
+
+- temperatura wody
+$$T_w=338~K$$
+- przewodność cieplna wody
+$$\lambda_w=0,6554~\frac{W}{mK}$$
+
+\item Ciepło właściwe wody w temperaturze $T_w_p$ (\emph{CoolProp}): \\
+
+- średnia temperatura wody przy ściance
+$$T_w_p=337,9~K$$
+- ciepło właściwe wody przy ciśnieniu  $p_w=1000~hPa$
+$$C_p_w=4187,2~\frac{J}{kgK}$$ \\
+\end{enumerate}
+
+\begin{center}
+\textbf{Wyznaczenie współczynnika wnikania ciepła od wody do ścianki} \\
+\end{center}
+
+\begin{enumerate}[1)]
+\item Liczba Grashofa (wzór \ref{Gr}): \\
+
+$$Gr=\frac{9,81\cdot 3,9^3\cdot 0,00055\cdot (338-337,8)}{(4,43*10^-^7)^2}=3,83*10^1^1$$
+
+\item Liczba Prandtla (wzór \ref{Pr}): \\
+
+$$Pr=\frac{0,00043\cdot4187,2}{0,6554}=3$$
+
+\item Liczba Rayleigha (wzór \ref{Ra}):
+
+$$Ra=3,83*10^1^1\cdot 3=1,06*10^1^2$$
+
+\item Liczba Nusselta (wzór \ref{Nu}): \\
+
+w przypadku powierzchni cylindrycznej, należy sprawdzić następujący warunek:
+
+$$D\ge \frac{35\cdot L}{Gr^1^/^4}$$
+
+$$D=4 \ge \frac{35\cdot 3,9}{(3,83*10^1^1)^1^/^4}=0,17~m$$
+warunek jest spełniony, więc powierzchnię boczną zbiornika można traktować jak ścianę pionową \cite{cengel}, dla której wzór na liczbę Nusselta przy obliczonej wartości lizby Rayleigha jest następujący:
+
+$$Nu=0,1\cdot Ra^1^/^3$$
+$$Nu=0,1\cdot (1,06*10^1^2)^1^/^3=1021$$
+
+\item Współczynnik wnikania ciepła: \\
+
+podstawiając wartości do przekształconego wzoru \ref{Nu} otrzymano
+
+$$\alpha_w=\frac{0,6554\cdot 1021}{3,9}=171,6~\frac{W}{m^2K}$$ \\
+
+\end{enumerate}
+
+\begin{center}
+\textbf{Wyznaczenie straty ciepła przez powierzchnię boczną zbiornika}
+\end{center}
+
+
+\begin{enumerate}[-]
+\item całkowity opór cieplny (wzór \ref{R}):
+$$R=\frac{1}{171,6}+\frac{0,03}{0,960}+\frac{0,02}{0,035}+\frac{0,15}{0,350}+\frac{0,03}{0,200}+\frac{0,03}{0,130}=1,418~\frac{m^2K}{W}$$
+
+\item współczynnik przenikania ciepła: \\
+
+zgodnie ze wzorem \ref{k} otrzymano wartość
+
+$$k=\frac{1}{1,418}=0,705~\frac{W}{m^2K}$$
+
+\item gęstość strumienia ciepła:
+
+$$\dot{q}=k\cdot (T_w-T_g),~\frac{W}{m^2}$$
+gdzie $T_g$ jest temperaturą gruntu
+
+$$\dot{q}=0,705\cdot (65-8)=40,20~\frac{W}{m^2}$$
+
+\item całkowita strata ciepła przez powierzchnię boczną (wzór \ref{pecleta}):
+
+$$\dot{Q}=\dot{q}\cdot A$$
+
+$$\dot{Q}=40,20\cdot 49=\textbf{1970~W}$$
+
+\end{enumerate}
+
+\subsection{Straty ciepła przez podstawę}
+W przypadku obliczeń strat ciepła przez podstawę, właściwości fizyczne wody się nie zmieniają - pozostają takie same jak w poprzednich obliczeniach. Zmienia się natomiast wymiar charakterystyczny ścianki. Podstawa jest poziomą płytą w kształcie koła. Wraz ze zmianą wymiaru charakterystycznego, ulegną zmianie wartości liczb kryterialnych.
+
+\begin{enumerate}[1)]
+\item wymiary podstawy
+$$d=4~m$$
+    \item wymiar charakterystyczny ścianki poziomej
+    \begin{equation}
+    L=\frac{2A}{Ob}
+    \label{pozioma}
+    \end{equation}
+    gdzie $A$ - pole powierzchni ścianki, $Ob$ - obwód ścianki.
+    
+    $$L=\frac{2\cdot \frac{\pi \cdot 4^2}{4}}{\pi \cdot 4}=2~m$$
+  
+ \item Liczba Grashofa: \\
+
+$$Gr=\frac{9,81\cdot 2^3\cdot 0,00055\cdot (338-337,8)}{(4,43*10^-^7)^2}=3,82*10^1^0$$
+
+\item Liczba Prandtla: \\
+
+$$Pr=\frac{0,00043\cdot4187,2}{0,6554}=3$$
+
+\item Liczba Rayleigha:
+
+$$Ra=3,82*10^1^0\cdot 3=1,06*10^1^1$$
+
+\item Liczba Nusselta: \\
+
+podczas obliczeń poziomej ścianki, należy wybrać odpowiedni wzór na liczbę Nusselta, w zależności od tego, która strona płyty ma wyższą temperaturę. W~przypadku dna, sytuację przedstawia rys. \ref{dno}:
+
+\begin{figure}[h] 
+% t - na górze str, b - u dołu str, h - w tym miejscu, p-na osobnej str
+\centering
+\includegraphics[width=7cm]h
+\caption{Powierzchnia ciepła i zimna \cite{cengel}.}
+\label{dno}
+\end{figure} \\
+
+Liczbę Nusselta należy obliczyć z następującego wzoru:
+\begin{equation}
+Nu=0,15\cdot Ra^1^/^3
+\label{nu}
+\end{equation}
+Jest on stosowany dla liczb \emph{Rayleigha} w przedziale $10^7-10^1^1$.
+
+$$Nu=0,15\cdot (1,06*10^1^1)^1^/^3=710$$
+
+\item Współczynnik wnikania ciepła:
+
+$$\alpha_w=\frac{0,6554\cdot 710}{2}=232,7~\frac{W}{m^2K}$$
+
+\item całkowity opór cieplny (wzór \ref{R}):
+
+$$R=\frac{1}{232,7}+\frac{0,03}{0,960}+\frac{0,02}{0,035}+\frac{0,15}{0,350}+\frac{0,03}{0,200}+\frac{0,03}{0,130}=1,416~\frac{m^2K}{W}$$
+
+\item współczynnik przenikania ciepła: \\
+
+zgodnie ze wzorem \ref{k} otrzymano wartość
+
+$$k=\frac{1}{1,416}=0,706~\frac{W}{m^2K}$$
+
+\item gęstość strumienia ciepła:
+
+$$\dot{q}=0,706\cdot (65-8)=40,25~\frac{W}{m^2}$$
+
+\item całkowita strata ciepła przez powierzchnię dna zbiornika (wzór \ref{pecleta}):
+
+$$\dot{Q}=\dot{q}\cdot A$$
+
+$$A=\frac{\pi \cdot 4^2}{4}=12,6~m^2$$
+
+$$\dot{Q}=40,25\cdot 12,6=\textbf{506~W}$$
+
+    
+    \end{enumerate}
+
+\subsection{Straty ciepła przez sufit}
+Górna ścianka zbiornika, podobnie jak jego dno, jest poziomą okrągłą ścianą płaską. Tworzą ją trzy warstwy materiału: szkło, styropian oraz guma. Od wewnątrz przegroda ta ma kontakt z wodą, a na zewnątrz z powietrzem atmosferycznym. Należy więc wykonać obliczenia wartości parametrów fizycznych powietrza. \\
+
+\textbf{Parametry wody} \\
+
+\noindent Wartości parametrów fizycznych wody pozostają takie same. Temperatura wewnętrznej powierzchni ścianki po iteracji wykonanej w programie \emph{Excel} wynosi:
+
+$$T_s_1=337,73~K$$
+
+\begin{enumerate}[1)]
+
+ \item Liczba Grashofa: \\
+ 
+ \noindent wymiar charakterystyczny nie ulega zmianie:
+
+$$Gr=\frac{9,81\cdot 2^3\cdot 0,00055\cdot (338-337,73)}{(4,43*10^-^7)^2}=5,89*10^1^0$$
+
+\item Liczba Prandtla:
+
+$$Pr=\frac{0,00043\cdot4187,2}{0,6554}=3$$
+
+\item Liczba Rayleigha:
+
+$$Ra=5,93*10^1^0\cdot 3=1,64*10^1^1$$
+
+\item Liczba Nusselta: \\
+
+\noindent w przypadku górnej ściany zbiornika, wyższa jest temperatura powierzchni dolnej, co przedstawia rysunek:
+
+\begin{figure}[h] 
+% t - na górze str, b - u dołu str, h - w tym miejscu, p-na osobnej str
+\centering
+\includegraphics[width=7cm]i
+\caption{Ciepła i zimna strona górnej ściany zbiornika \cite{cengel}.}
+\label{sufit}
+\end{figure} \\
+
+w tym przypadku stosuje się wzór przedstawiony poniżej:
+
+\begin{equation}
+Nu=0,27\cdot Ra^1^/^4
+\label{nu-p}
+\end{equation}
+jest on prawdziwy dla liczb \emph{Rayleigha} w przedziale $10^5-10^1^1$. \\
+
+wartość liczby Nusselta wynosi:
+
+$$Nu=0,27\cdot (1,65*10^1^1)^1^/^4=172$$
+
+\item Współczynnik wnikania ciepła: \\
+
+\noindent znając wartość liczby Nusselta, współczynnik $\alpha_w$ wyznacza się ze wzoru (\ref{Nu}):
+
+$$Nu=\frac{\alpha \cdot L}{\lambda_p}$$
+przekształcając wzór do postaci:
+
+\begin{equation}
+\alpha_w=\frac{\lambda_w\cdot Nu}{L},~\frac{W}{m^2K}
+\label{alfa}
+\end{equation}
+
+obliczona została wartość współczynnika:
+
+$$\alpha_w=\frac{0,6554\cdot 172}{2}=56,3~\frac{W}{m^2K}$$ \\
+
+\end{enumerate}
+
+\textbf{Parametry powietrza}
+
+\begin{enumerate}[a)]
+
+\item Współczynnik rozszerzalności objętościowej:\\
+
+\noindent w przypadku powietrza można skorzystać z poniższego wzoru:
+
+\begin{equation}
+\beta_p=\frac{1}{T_p},~\frac{1}{K}
+\label{bp}
+\end{equation}
+
+$$\beta_p=\frac{1}{280}=0,00357~\frac{1}{K}$$
+
+\item Średnia temperatura powietrza przy ściance zewnętrznej: 
+
+$$T_s_p=\frac{T_s_2+T_p}{2},~K$$
+
+podobnie jak wcześcniej, należy założyć temperaturę ścianki zewnętrznej, pamiętając o warunku:
+$$T_s_2 > T_p$$
+dla tej temperatury również prowadzono dalsze obliczenia. Dzięki obliczeniom iteracyjnym otrzymano prawdziwą wartość:
+$$T_s_2=284,84~K$$
+ostatecznie temperatura średnia powietrza przy ściance wynosi:
+$$T_w_p=\frac{284,84+280}{2}=282,42~K$$
+
+\item Gęstość powietrza w temperaturze $T_w_p$ i ciśnieniu $1000~hPa$:
+
+$$\rho_w_p=1,234~\frac{kg}{m^3}$$
+
+\item Lepkość dynamiczna powietrza w temperaturze $T_w_p$ i ciśnieniu $1000~hPa$:
+
+$$\mu_w_p=1,77*10^-^5~Pa\cdot s$$
+
+\item Kinematyczny współczynnik lepkości:
+
+$$\nu_w_p=\frac{1,77*10^-^5}{1,234}=1,43*10^-^5~\frac{m^2}{s}$$
+
+\item Współczynnik przewodzenia ciepła powietrza:
+
+$$\lambda_p=0,0246~\frac{W}{mK}$$
+
+\item Ciepło właściwe powietrza  w temperaturze $T_w_p$ i ciśnieniu $1000~hPa$:
+
+$$C_p_p=1005,8~\frac{J}{kgK}$$
+
+\end{enumerate}
+
+\begin{center}
+\textbf{Wyznaczenie współczynnika przejmowania ciepła po stronie powietrza}
+\end{center}
+
+\begin{enumerate}[1)]
+
+\item Liczba Grashofa: 
+
+$$Gr=\frac{9,81\cdot 2^3\cdot 0,00357\cdot (284,84-280)}{(1,43*10^-^5)^2}=6,61*10^9$$
+
+\item Liczba Prandtla: 
+
+$$Pr=\frac{1,77*10^-^5\cdot1005,8}{0,0246}=0,7$$
+
+\item Liczba Rayleigha:
+
+$$Ra=6,61*10^9\cdot 0,7=4,77*10^9$$
+
+\item Liczba Nusselta:
+
+$$Nu=0,15\cdot (4,77*10^9)^1^/^3=253$$
+
+\item Współczynnik wnikania ciepła (wzór \ref{alfa}):
+
+$$\alpha_p=\frac{0,0246\cdot 253}{2}=3,1~\frac{W}{m^2K}$$ \\
+
+\end{enumerate}
+
+\begin{center}
+\textbf{Całkowity strumień ciepła przenikający przez górną ścianę zbiornika}
+\end{center}
+
+\begin{enumerate}[-]
+
+\item całkowity opór cieplny (wzór \ref{R}):
+
+$$R=\frac{1}{56,3}+\frac{0,02}{0,130}+\frac{0,15}{0,045}+\frac{0,03}{0,960}+\frac{1}{3,1}=3,858~\frac{m^2K}{W}$$
+
+\item współczynnik przenikania ciepła: \\
+
+zgodnie ze wzorem \ref{k} otrzymano wartość
+
+$$k=\frac{1}{3,858}=0,259~\frac{W}{m^2K}$$
+
+\item gęstość strumienia ciepła:
+
+$$\dot{q}=0,259\cdot (65-7)=15,00~\frac{W}{m^2}$$
+
+\item całkowita strata ciepła przez powierzchnię dna zbiornika (wzór \ref{pecleta}):
+
+$$\dot{Q}=\dot{q}\cdot A$$
+
+$$A=\frac{\pi \cdot 4^2}{4}=12,6~m^2$$
+
+$$\dot{Q}=15,00\cdot 12,6=\textbf{189~W}$$
+
+\end{enumerate}
+
+\subsection{Całkowite straty ciepła zbiornika}
+
+Po wyznaczeniu strat ciepła na poszczególnych ścianach zasobnika wypełnionego wodą o temperaturze $\rm{65^\circ C}$, umieszczonego w gruncie o temperaturze $\rm{8^\circ C}$ oraz graniczącego od góry z powietrzem atmosferycznym o średniej temperaturze $\rm{7^\circ C}$, całkowite straty ciepła wynoszą:
+
+$$\dot Q_c=1970+506+189=\textbf{2665~W}$$
+
+\noindent Znając ilość energii traconej na skutek przepływu ciepła, możliwe jest wykonanie obliczeń pozwalających wyznaczyć minimalną ilość kolektorów słonecznych, potrzebnych do utrzymywania wody w zbiorniku na poziomie wymaganej temperatury $\rm{65^\circ C}$. Obliczenia oraz założenia przedstawione będą w następnym rozdziale.
+
+
+\chapter{Kolektory słoneczne}
+W celu utrzymania odpowiedniej temperatury wody wypełniającej zbiornik jako akumulator energii cieplnej, konieczne jest zastosowanie odpowiedniego systemu pozwalającego utrzymać temperaturę wymaganą w celach użytkowych. Przyjęto, że system ten tworzyć będzie zespół współpracujących ze sobą kolektorów słonecznych. Obliczenia projektowe sprowadzają się do wyznaczenia odpowiednich kątów nachylenia, optymalnych parametrów pracy oraz mocy i ilości kolektorów. Obliczenia wykonywane będą za pomocą programu \emph{SolarSym}.
+
+\section{Definicja}
+\textbf{Kolektor słoneczny} to urządzenie, dzięki któremu możliwa jest konwersja energii promieniowania słonecznego na ciepło użytkowe. Na ilość energii docierającej do powierzchni kolektora ma wpływ wiele czynników, np. lokalizacja, pora roku, pora dnia, warunki pogodowe oraz orientacja kolektora względem słońca. \\
+\indent \textbf{Promieniowanie całkowite} docierające do powierzchni składa się z promieniowania bezpośredniego i rozproszonego. Promieniowanie bezpośrednie to takie, które nie oddziaływuje z atmosferą. Intensywność tego promieniowania zależy od szerokości geograficznej oraz dnia w roku. Prmieniowanie rozproszone to takie, które dociera do kolektora po rozproszeniu przez pyły, parę wodną czy gazy, a na widmo tego promieniowania ma wpływ zachmurzenie i zapylenie powietrza.
+
+\section{Parametry i warunki pracy}
+Wybranym rodzajem kolektora słonecznego jest cieczowy kolektor płaski. Tego typu kolektory używane są głównie do podgrzewania wody użytkowej. Przyjęto, że system usadowiony będzie na dachu domku jednorodzinnego. Czynnikiem obiegowym w kolektorze jest woda. Parametry materiałów niektórych elementów urządzenia przedstawiono w tabeli niżej.
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|c|c|c|c|c|} \hline
+        \textbf{Element} & \textbf{Grubość} & \textbf{Przewodność cieplna} & \textbf{Absorpcyjność} & \textbf{Refleksyjność}
+         \\ \hline
+   $-$ & $\rm{\sigma, mm}$ & $\rm{\lambda, W/mK}$ & $\rm{\alpha_n}$ & $\rm{\alpha_r}$ \\ \hline
+   Szyba & 5 & 0,96 & 0,95 & 0,05 \\ \hline
+   Izolacja & 100 & 0,042 & --- & --- \\ \hline
+    \end{tabular}
+    \caption{Parametry elementów cieczowego kolektora płaskiego.}
+    \label{kolektor}
+\end{table} 
+
+\newpage
+
+Przyjęto również następujące wartości danych wyjściowych:
+
+\begin{itemize}
+\item powierzchnia kolektora
+$$A=2~m^2$$
+ \item refleksyjność ciemnej dachówki
+$$\rho_o=0,09$$
+\item bezwzględna temperatura otoczenia
+$$T_o_t=293~K$$
+\item prędkość wiatru
+$$w=4,0~\frac{m}{s}$$
+\item czas pracy kolektora
+$$01.06-30.09$$
+\end{itemize}
+Założono, że system kolektorów ma pracować po 8h każdego dnia, czyli 1/3 całej doby. Znając całkowite straty cieplne zbiornika, można wyznaczyć wymaganą wydajność cieplną systemu solarnego:
+
+$$\dot Q_k=3\cdot \dot Q_c=3\cdot 2,665=\textbf{7,995~kW}$$
+Zadaniem jest wykonanie obliczeń w celu poznania wymaganej ilości kolektorów, aby uzyskać taką moc cieplną. Moc pojedynczego kolektora zależy od tego, gdzie i jak jest usadowiony oraz w jakim okresie działa. Należy policzyć moc kolektora działającego w mieście Wrocław.
+
+\subsection{Natężenie promieniowania słonecznego}
+Aby wyznaczyć moc kolektora należy na początku określić charakterystykę natężenia promieniowania w okresie jego pracy. 
+Ważnym jest, aby kolektora nie projektować na największe natężenie, ale na średnią wartość promieniowania w okresie jego pracy. Wszystkie dane dotyczące natężenia uzyskano przy pomocy programu \emph{SolarSym}.
+
+\begin{enumerate}[a)]
+\item całkowita energia dostarczona do powierzchni w okresie $01.06-30.09$ (122 dni):
+$$G_c=2560,7~\frac{MJ}{m^2}$$
+
+\item średnia dzienna wartość natężenia promieniowania:
+$$G_s_r=\frac{G_c}{l_d}=\frac{2560,7}{122}=20,99~\frac{MJ}{m^2}$$
+
+\item następnie wyszukano dzień, w którym natężenie promieniowania odpowiada w~przybiżeniu obliczonemu średniemu natężeniu:
+
+\begin{center}
+dla 197 dnia w roku
+$$G=20,96~\frac{MJ}{m^2}$$
+\end{center}
+
+\item w kolejnym kroku wyznaczono odpowiednio największą wartość promieniowania bezpośredniego i rozproszonego w ciągu tego dnia:
+
+197 dzień roku, 16 lipca, godz. $t$ 12:00
+\begin{center}
+Promieniowanie bezpośrednie
+$$G_b=383~\frac{W}{m^2}$$
+
+Promieniowanie rozproszone
+$$G_d=254~\frac{W}{m^2}$$
+\end{center}
+
+\item na podstawie godziny, dla której odczytano wartości promieniowania bezpośredniego i rozproszonego, wyznaczono godzinowy kąt:
+
+\begin{center}
+minutowa różnica względem godziny $t=12:00$
+$$\Delta t=0$$
+godzinowy kąt
+$$\omega=\left(5\cdot \frac{\Delta t}{60}\right)=\left(5\cdot \frac{0}{60}\right)=0^\circ=0~rad$$
+\end{center}
+
+\item na końcu konieczne jest określenie pozostałych kątów, które definiują ustawienie kolektora: \\
+
+szerokość geograficzna dla Wrocławia
+$$\phi=51,167^\circ=0,893~rad$$
+
+kąt orientacji względem osi północ/południe przyjęto
+$$\gamma=0^\circ=0~rad$$
+
+kąt deklinacji
+$$\sigma=-23,45\cdot sin\left(360\cdot \frac{284+197}{365}\right)=0,012~rad$$
+
+\end{enumerate}
+
+\subsection{Kąt nachylenia}
+
+Optymalna praca płaskiego kolektora cieczowego będzie miała miejsce wtedy, gdy promienie słoneczne będą padały pod kątem prostym na jego powierzchnię. Konieczne jest ustalenie tego kąta. Poprawne nachylenie kolektora uzyskuje się, kiedy kąt między składową normalną do powierzhni i promieniami słonecznymi jest bliski $\rm{0^\circ}$, wtedy $\rm{cos(\theta \beta)}=1$. \\ 
+
+\noindent
+Korzystając z programu \emph{Excel} wygenerowano wykres wartości $cos(\theta \beta)$ w zależności od kąta $\beta$ zawierającego się w przedziale $0\div 90^\circ$. Wartości wyznaczono według wzoru: 
+
+\begin{figure}[h] 
+\centering
+\includegraphics[width=10cm]k
+\end{figure}
+
+\newpage 
+
+\begin{center}
+Otrzymane wyniki przedstawiono na wykresie poniżej:
+\end{center}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=14cm]j
+\caption{Wykres przedstawiający optymalny kąt nachylenia kolektora.}
+\end{figure}
+
+\noindent Analizując wykres wartości kosinusa kąta padania promieniowania słonecznego w~zależności od kąta odchylenia kolektora od poziomu zauważono, że optymalny kąt nachylenia wynosi:
+$$\beta=50^\circ=0,873~rad$$
+dla którego $cos(\theta \beta)$ jest równy:
+$$cos(\theta \beta)=0,99997$$
+natomiast kąt między wiązką promieniowania a składową normalna do powierzchni urządzenia:
+$$\theta \beta=0,45^\circ=0,008~rad$$
+
+\subsection{Gęstość promieniowania}
+Po wyznaczeniu wartości wszystkich kątów koniecznych do optymalnego ustawienia kolektora, należy przystąpić do określenia ilości promieniowania, które pada na powierzchnię kolektora. W pierwszym kroku obliczono wartości współczynników promieniowania bezpośredniego, rozproszonego i odbitego.
+
+\begin{enumerate}[1)]
+\item współczynnik gęstości promieniowania bezpośredniego:
+$$R_b=\frac{cos(\phi-\beta)\cdot cos(\omega)+sin(\phi-\beta)\cdot sin(\sigma)}{cos(\phi)\cdot cos(\sigma)+sin(\phi)\cdot sin(\sigma)}$$
+$$R_b=1,57$$
+\item współczynnik gęstości promieniowania rozproszonego:
+$$R_d=\frac{1+cos(\beta)}{2}=\frac{1+cos(0,873)}{2}=0,82$$
+\item współczynnik gęstości promieniowania odbitego:
+$$R_o=\frac{1-cos(\beta)}{2}=\frac{1-cos(0,873)}{2}=0,18$$
+\end{enumerate}
+
+\noindent Ilość promieniowania padającego na szybę kolektora:
+$$G=G_b\cdot R_b+G_d\cdot R_d+(G_b+G_d)\cdot R_o\cdot \rho_o$$
+$$G=383\cdot 1,57+254\cdot 0,82+(383+254)\cdot 0,18\cdot 0,09=820,4~\frac{W}{m^2}$$
+Konieczne jest również wyznaczenie zastępczych kątów padania promieniowania, żeby w dalszej części obliczeń określić wartość współczynników transmisyjno-absorpcyjnych:
+
+\begin{itemize}
+\item kąt padania promieniowania rozproszonego
+$$\theta _d=59,86-0,1388\cdot \beta+0,001497\cdot \beta^2$$
+$$\theta _d=59,86-0,1388\cdot 0,873+0,001497\cdot 0,873^2=0,989~rad$$
+
+\item kąt padania promieniowania odbitego
+$$\theta_o=90-0,5788\cdot \beta +0,002693\cdot \beta^2$$
+$$\theta_o=90-0,5788\cdot 0,873 +0,002693\cdot 0,873^2=1,183~rad$$
+
+\end{itemize}
+
+\subsection{Współczynniki transmisyjno-absorpcyjne}
+Współczynniki te pozwalają określić ilość promieniowania trafiającego na absorber płaskiego kolektora cieczowego.
+
+\begin{enumerate}[a)]
+\item transmisyjność promieniowania bezpośredniego:
+$$\tau_b=1,018\cdot 0,8\cdot cos(\theta \beta)+sin^3(\theta\beta)\cdot cos(\theta\beta)$$
+$$\tau_b=1,018\cdot 0,8\cdot cos(0,008)+sin^3(0,008)\cdot cos(0,008)=0,814$$
+\item transmisyjność promieniowania rozproszonego:
+$$\tau_d=1,018\cdot 0,8\cdot cos(\theta_d)+sin^3(\theta_d)\cdot cos(\theta_d)$$
+$$\tau_d=1,018\cdot 0,8\cdot cos(0,989)+sin^3(0,989)\cdot cos(0,989)=0,768$$
+\item transmisyjność promieniowania odbitego:
+$$\tau_o=1,018\cdot 0,8\cdot cos(\theta_o)+sin^3(\theta_o)\cdot cos(\theta_o)$$
+$$\tau_o=1,018\cdot 0,8\cdot cos(1,183)+sin^3(1,183)\cdot cos(1,183)=0,608$$
+
+\item współczynnik transmisyjno-absorpcyjny dla promieniowania bezpośredniego obliczono ze wzoru:
+$$\tau_a_b=1,01\cdot \tau_b\cdot \left(\frac{\alpha}{\alpha_n}\right)_x\cdot \alpha_n$$
+w którym $\left(\frac{\alpha}{\alpha_n}\right)_x$ to absorpcyjność absorbera wyznaczona ze wzoru:
+
+$$\left(\frac{\alpha}{\alpha_n}\right)_x=1+2,0345\cdot 10^-^3\cdot \theta_x-1,99\cdot 10^-^4\cdot \theta_x^2+5,324\cdot 10^-^6\cdot \theta_x^3-4,799\cdot 10^-^8\cdot \theta_x^4$$
+podstawiając wartości kątów otrzymano odpowiednio:
+$$\left(\frac{\alpha}{\alpha_n}\right)_b=1,00002$$
+
+$$\left(\frac{\alpha}{\alpha_n}\right)_d=1,00182$$
+
+$$\left(\frac{\alpha}{\alpha_n}\right)_o=1,00214$$
+
+
+$$\tau_a_b=1,01\cdot 0,814\cdot 1,00002\cdot 0,95=0,781$$
+
+\item współczynnik transmisyjno-absorpcyjny dla promieniowania rozproszonego:
+
+$$\tau_a_d=1,01\cdot 0,768\cdot 1,00182\cdot 0,95=0,738$$
+
+\item współczynnik transmisyjno-absorpcyjny dla promieniowania odbitego:
+
+$$\tau_a_o=1,01\cdot 0,608\cdot 1,00214\cdot 0,95=0,584$$
+
+\end{enumerate}
+
+\subsection{Absorpcja energii promieniowania}
+
+Dzięki wartościom poszczególnych współczynników, wyznaczonym w poprzednich obliczeniach, możliwe jest określenie ilości promieniowania, które po przejściu przez szybę trafia na powierzchnię absorbera:
+
+$$S_a=G_b\cdot R_b\cdot \tau_a_b+G_d\cdot R_d\cdot \tau_a_d+(G_b+G_d)\cdot \rho_o \cdot R_o\cdot \tau_a_o$$
+
+$$S_a=630,1~\frac{W}{m^2}$$
+
+\subsection{Straty cieplne w kolektorze}
+
+Na efektywność pracy kolektora wpływa głównie wielkość jego strat cieplnych, czyli ilośc ciepła traconego z wnętrza kolektora do otoczenia. W celu określenia sumarycznego współczynnika przenikania ciepła, konieczne jest wyznaczenie temperatury szyby, absorbera oraz czynnika płynącego wewnątrz rur, a także obliczenie współczynników przenikania oraz wnikania.
+
+\begin{figure}[h] 
+% t - na górze str, b - u dołu str, h - w tym miejscu, p-na osobnej str
+\centering
+\includegraphics[width=8cm]l
+\caption{Schemat strat ciepła w kolektorze cieczowym płaskim.}
+\label{sk}
+\end{figure}
+
+\begin{enumerate}[a)]
+
+\item Temperatura powierzchni absorbera:
+$$T_a=\left(\frac{S_a\cdot \alpha_n}{\sigma}\right)^\frac{1}{4}$$
+gdzie $\rm{\sigma}$ - \emph{stała Stefana-Boltzmanna}.
+$$T_a=\left(\frac{630,1\cdot 0,95}{5,67\cdot 10^-^8}\right)^\frac{1}{4}=320,5~K$$
+
+\item Średnia temperatura wody w przewodach kolektora: \\
+
+\noindent Założono, że temperatura wody na wlocie do kolektora będzie równa około $\rm{15^\circ C}$.
+$$T_s_w=\frac{338-288}{ln \frac{338}{288}}=312,3~K$$
+
+\item Temperatura szyby kolektora: \\
+
+\noindent Przyjęto, że średnia temperatura powietrza w okresie działania kolektorów wynosić będzie $\rm{20^\circ C}$.
+$$T_s_z=\frac{312,3-293}{ln \frac{312,3}{293}}=302,6~K$$
+
+\item Współczynnik wnikania ciepła od zewnętrznej strony szyby:
+$$h_z=2,8+3\cdot w=2,8+3\cdot4=14,8~\frac{W}{m^2}$$
+\item Współczynnik wnikania ciepła przy wewnętrznej powierzchni szyby:
+$$h_1=2,8+3\cdot0=2,8~\frac{W}{m^2}$$
+\item Współczynnik wnikania ciepła przy powierzchni absorpera:
+$$h_2=2,8+3\cdot0=2,8~\frac{W}{m^2}$$
+
+\item Wartość współczynnika przenikania ciepła przez szybę: \\
+
+\noindent przenikanie wiąże się z wnikaniem po obu stronach powierzchni materiału oraz przewodzeniem ciepła przez materiał. 
+
+$$U_c=\frac{1}{\frac{1}{h_1}+\frac{\delta_s_z}{\lambda_s_z}+\frac{1}{h_z}}$$
+$$U_c=\frac{1}{\frac{1}{2,8}+\frac{0,005}{0,960}+\frac{1}{14,8}}=2,33~\frac{W}{m^2K}$$
+\item Wartość współczynnika przenikania ciepła przez izolację: 
+$$U_d=\frac{1}{\frac{1}{h_2}+\frac{\delta_i_z}{\lambda_i_z}+\frac{1}{h_z}}$$
+$$U_d=\frac{1}{\frac{1}{2,8}+\frac{0,100}{0,042}+\frac{1}{14,8}}=0,36~\frac{W}{m^2K}$$
+
+\item Radiacyjny współczynnik wnikania ciepła: \\
+
+\noindent wartość radiacyjnego współczynnika przejmowania ciepła obliczono ze wzoru:
+$$h_r=5,67\cdot 10^-^8\cdot (T_s_w^2+T_s_z^2)\cdot\frac{T_s_w+T_s_z}{\frac{1}{0,9}+\frac{1}{0,9}-1}$$
+$$h_r=5,67\cdot 10^-^8\cdot (312,3^2+302,6^2)\cdot\frac{312,3+302,6}{\frac{1}{0,9}+\frac{1}{0,9}-1}=5,4~\frac{W}{m^2K}$$
+
+\item Całkowity współczynnik przenikania ciepła: \\
+
+\noindent jego wartość wyznaczono korzystając ze wzoru
+
+$$U_L=\frac{(U_c+U_d)\cdot [h_1\cdot h_2+h_r(h_1+h_2)]+U_c\cdot U_d(h_1+h_2)}{h_1\cdot h_2+h_2\cdot U_c+h_r\cdot (h_1+h_2)}$$
+
+$$U_L=2,4~\frac{W}{m^2K}$$
+
+\end{enumerate}
+
+\section{Moc użyteczna kolektora}
+Znając powierzchnię absorbcyjną płaskiego kolektora cieczowego, gęstość promieniowania padającego na absorber, całkowity współczynnik przenikania ciepła do otoczenia oraz różnicę temperatur absorbera i otoczenia, możliwe jest wyznaczenie mocy cieplnej pojedynczego kolektora na podstawie wzoru przedstawionego poniżej:
+
+$$Q_u=A\cdot (S_a-U_L(T_a-T_o_t))$$
+
+$$Q_u=2\cdot (630,1-2,4\cdot(320,5-293))=1128,2~W$$
+
+\subsection{Wymagana ilość kolektorów}
+
+
+moc całkowita systemu grzewczego powinna wynosić:
+
+$$\dot Q_k=7995~W$$
+z czego wynika, że aby zapewnić odpowiednią temperaturę w zbiorniku, kolektorów powinno być:
+
+$$n=\frac{Q_k}{Q_u}=\frac{7995}{1128,2}=7~sztuk~minimum$$
+
+\section{Analiza obliczeń}
+Obliczenia wielkości strat cieplnych zbiornika wykonano przy wstępnym założeniu wymaganej temperatury wody do celów użytkowych. Następnie na podstawie obliczonych strat, wyznaczono minimalną ilość kolektorów potrzebnych do zbilansowania układu. Pojawiły się natomiast pewne problemy dotyczące parametrów kolektora. Związane są one z natężeniem promieniowania. W związku z tym przedstawiono korektę obliczeń, aby system działał prawidłowo w warunkach rzeczywistych.
+
+\subsection{Temperatura absorbera}
+Podczas prowadzenia obliczeń parametrów cieczowego kolektora płaskiego zauważono, że średnia maksymalna temperatura absorbera kolektora działającego w okresie 01.06 -- 30.09 wynosi:
+$$T_a=320,5~K$$
+czyli 
+$$t_a=47,5^\circ C$$
+Na tej podstawie można stwierdzić, że zespół kolektorów będzie w stanie utrzymać temperaturę wody w zbiorniku równą conajwyżej temperaturze absorbera (pomijąjąc straty przesyłu i wymiany ciepła). Z tego wynika, że w interesującym nas okresie, system solarny \textbf{nie zdoła} utrzymać założonej wstępnie temperatury wody na poziomie:
+$$t_w=65^\circ C$$
+
+\noindent W takiej sytuacji należy zmienić założenia początkowe dotyczące wody w zbiorniku, następnie wykonać obliczenia korekcyjne strat cieplnych zbiornika i wreszcie wyznaczyć rzeczywistą ilość kolektorów zasilających zbiornik.
+
+\subsection{Obliczenia korekcyjne}
+W pierwszym kroku należy wyznaczyć całkowite straty cieplne zbiornika. W tym celu wykorzystano obliczenia wykonane w programie \emph{Excel}, zmieniając jedynie temperaturę wody. Otrzymane wyniki przedstawiono poniżej. \\
+
+\noindent Straty ciepła przez powierzchnię boczną
+
+\begin{enumerate}[-]
+\item pole powierzchni:
+$$A_b=49~m^2$$
+\item wymiar charakterystyczny:
+$$L=H=3,9~m$$
+\item temperatura wody:
+$$t_w=45^\circ C$$
+$$T_w=318~K$$
+\item gęstość wody:
+$$\rho_w=990,24~\frac{kg}{m^3}$$
+\item temperatura wody w warstwie przyściennej po iteracji:
+$$T_s_1=317,8~K$$
+\item gęstość w warstwie przyściennej:
+$$\rho_s_1=990,32~\frac{kg}{m^3}$$
+\item współczynnik rozszerzalności objętościowej:
+$$\beta_w=0,00042~\frac{1}{K}$$
+\item średnia temperatura wody w warstwie przyściennej:
+$$T_w_p=317,9~K$$
+\item gęstość wody w warstwie przyściennej:
+$$\rho_w_p=990,28~\frac{kg}{m^3}$$
+\item dynamiczny współczynnik lepkości:
+$$\mu_w_p=0,00060~Pa\cdot s$$
+\item kinematyczny współczynnik lepkości:
+$$\nu_w_p=6,04*10^-^7~\frac{m^2}{s}$$
+\item współczynnik przewodzenia ciepła wody:
+$$\lambda_w=0,63842~\frac{W}{mK}$$
+\item ciepło właściwe wody:
+$$Cp_w=4180,12~\frac{J}{kgK}$$
+\item Liczba Prandtla:
+$$Pr=4$$
+\item Liczba Grashofa:
+$$Gr=1,33*10^1^1$$
+\item Liczba Rayleigha:
+$$Ra=5,20*10^1^1$$
+\item Liczba Nusselta:
+$$Nu=804$$
+\item współczynnik wnikania ciepła:
+$$\alpha_w=131,6~\frac{W}{m^2K}$$
+\item współczynnik przenikania ciepła:
+$$k=0,70~\frac{W}{m^2K}$$
+\item gęstość strumienia ciepła:
+$$\dot q=26,1~\frac{W}{m^2}$$
+\item całkowita strata ciepła przez powierzchnię boczną:
+$$\dot Q=\textbf{1277~W}$$
+
+\end{enumerate}
+W przypadku dna zbiornika otrzymano wyniki:
+
+\begin{enumerate}[-]
+\item pole powierzchni dna zbiornika:
+$$A_d=12,57~m^2$$
+\item Liczba Nusselta:
+$$Nu=559$$
+\item współczynnik wnikania ciepła:
+$$\alpha_w=178,5~\frac{W}{m^2K}$$
+\item współczynnik przenikania ciepła:
+$$k=0,71~\frac{W}{m^2K}$$
+\item gęstość strumienia ciepła:
+$$\dot q=26,1~\frac{W}{m^2}$$
+\item całkowita strata ciepła przez powierzchnię boczną:
+$$\dot Q=\textbf{328~W}$$
+
+\end{enumerate}
+
+\newpage
+\noindent Natomiast obliczenia korekcyjne dla górnej ściany zbiornika dały następujące wyniki:
+
+\begin{enumerate}[-]
+\item Liczba Nusselta po stronie wody:
+$$Nu=142$$
+\item Liczba Nusselta po stronie powietrza:
+$$Nu=227$$
+\item współczynnik wnikania po stronie wody:
+$$\alpha_w=45,3~\frac{W}{m^2K}$$
+\item współczynnik wnikania po stronie powietrza:
+$$\alpha_p=2,8~\frac{W}{m^2K}$$
+\item współczynnik przenikania ciepła:
+$$k=0,26~\frac{W}{m^2K}$$
+\item gęstość strumienia ciepła:
+$$\dot q=9,7~\frac{W}{m^2}$$
+\item całkowita strata ciepła przez górną ścianę zbiornika:
+$$\dot Q=\textbf{122~W}$$
+\end{enumerate}
+Zatem całkowite straty ciepła zbiornika, w którym znajduje się woda o temperaturze $\rm{45^\circ C}$ wynoszą:
+$$\dot Q_c=1277+328+122=\textbf{1727~W}$$
+uwzględniając dzienny czas pracy kolektorów jako 8h, czyli 1/3 doby otrzymuje się minimalną wymaganą moc grzewczą systemu solarnego, aby zbilansować straty cieplne zbiornika:
+$$Q_k=3\cdot \dot Q_c=3\cdot 1727=\textbf{5181~W}$$
+
+\subsection{Rzeczywiste parametry kolektora}
+W początkowych obliczeniach założono, że średnia temperatura wody na wlocie do płaskiego kolektora wynosi $\rm{15^\circ C}$, przy temperaturze na wylocie równej $\rm{65^\circ C}$. Wiadomo już, że jest to niemożliwe. Dlatego wyznaczono poprawne temperatury, będące zgodne z rzeczywistością. \\
+
+\noindent Założenia ostateczne:
+
+\begin{itemize}
+\item temperatura wody na wylocie z kolektora
+$$t_2=45^\circ C$$
+\item temperatura wody na wlocie do kolektora
+$$t_1=40^\circ C$$
+\item średnia temperatura powietrza w okresie działania kolektorów
+$$t_p=20^\circ C$$
+\end{itemize}
+
+\begin{center}
+\textbf{Ostateczne parametry kolektora}
+\end{center}
+
+\begin{enumerate}[-]
+\item temperatura powierzchni absorbera:
+$$T_a=320,5~K$$
+\item temperatura wody w przewodach kolektora:
+$$T_s_w=\frac{318-313}{ln\frac{318}{313}}=315,5~K$$
+\item temperatura szyby kolektora:
+$$T_s_z=\frac{315,5-293}{ln\frac{315,5}{293}}=304,1~K$$
+\item radiacyjny współczynnik wnikania ciepła:
+$$h_r=5,67\cdot 10^-^8\cdot (315,5^2+304,1^2)\cdot\frac{315,5+304,1}{\frac{1}{0,9}+\frac{1}{0,9}-1}=3,74~\frac{W}{m^2K}$$
+\item całkowity współczynnik przenikania ciepła:
+$$U_L=2,33~\frac{W}{m^2K}$$
+\end{enumerate} \\
+
+\begin{center}
+\textbf{Rzeczywista moc kolektora}
+\end{center}
+$$Q_u=2\cdot (630,1-2,33\cdot(320,5-293))=1132~W$$ \\
+
+
+\begin{center}
+\textbf{Minimalna ilość kolektorów, w celu zapewnienia wymaganej temperatury wody w zbiorniku}
+\end{center}
+$$n=\frac{Q_k}{Q_u}=\frac{5181}{1132}=5~sztuk~minimum$$
+
+\newpage
+\section{Dobór średnic przewodów}
+Projektowany obieg jest obiegiem wymuszonym. Przepływ czynnika wymuszany będzie przez pompę obiegową. Konieczny jest więc odpowiedni dobór średnic przewodów znajdujących się wewnątrz kolektora. Obliczenia sprowadzają się do wyznaczenia wewnętrznych średnic rur, przez które będzie płynął czynnik roboczy, którym jest woda. 
+
+\subsection{Wyznaczenie średnic wewnętrznych}
+Znając użyteczną moc cieplną płaskiego kolektora cieczowego, możliwe jest obliczenie strumienia masy czynnika na podstawie równania ciągłości przepływu:
+
+\begin{equation}
+\dot{m}=w\cdot A\cdot\rho,~\frac{kg}{s}
+\end{equation}
+gdzie $A$ to pole przekroju poprzecznego przewodu:
+$$A=\frac{\Pi\cdot d_w^2}{4},~m^2$$
+po podstawieniu wzoru na pole przekroju do równania strumienia masy oraz po wykonaniu przekształceń, otrzymano wzór pozwalający wyznaczyć średnicę wewnętrzną przewodu:
+$$d_w=\sqrt{\frac{4\cdot \dot{m}}{\Pi\cdot w\cdot \rho}}$$
+Zalecana prędkość przepływu czynnika w standardowej instalacji solarnej zawiera się w przedziale:
+$$w=0,4\div 0,7~\frac{m}{s}$$
+Strumień masy czynnika można wyznaczyć ze wzoru na użyteczną moc cieplną kolektora słonecznego:
+\begin{equation}
+Q_u=\dot m\cdot C_p\cdot (T_2-T_1)
+\end{equation}
+gdzie $C_p$ to średnia pojemność cieplna czynnika między jego temperaturą na wlocie i wylocie:
+$$C_p(318~K)=4180,12~\frac{J}{kgK}$$
+$$C_p(313~K)=4179,40~\frac{J}{kgK}$$
+
+\begin{enumerate}[-]
+\item średnia pojemność cieplna wody:
+$$C_p=0,5\cdot (4180,12+4179,40)=4179,76~\frac{J}{kgK}$$
+\item strumień masy wody:
+$$\dot m=\frac{Q_u}{C_p\cdot (T_2-T_1)}=\frac{1132}{4179,76\cdot (45-40)}=0,0542~\frac{kg}{s}$$
+\item średnia gęstość wody w przewodzie:
+$$\rho_w=991,26~\frac{kg}{m^3}$$
+\item założona prędkość średnia czynnika:
+$$w=0,40~\frac{m}{s}$$
+\item średnica wewnętrzna przewodu w kolektorze:
+$$d_w=\sqrt{\frac{4\cdot 0,0542}{\Pi\cdot 0,40\cdot 991,26}}=0,01319~m=13,19~mm$$
+\end{enumerate}
+
+\subsection{Średnica nominalna}
+Nominalną średnicę przewodu w płaskim kolektorze cieczowym dobrano na podstawie typoszeregu wrocławskiej firmy \emph{HUTMEN S.A.} (rys. \ref{rury}):
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=13cm, height=10cm]m
+\caption{Średnice nominalne miedzianych rur instalacyjnych firmy \emph{HUTMEN}.}
+\label{rury}
+\end{figure}
+\noindent Oznaczenie dobranej rury:
+\begin{center}
+DN12
+\end{center}
+o średnicy zewnętrznej równej:
+$$d_z=15~mm$$
+której grubość ścianki wynosi:
+$$g=1~mm$$
+
+\chapter{Zapotrzebowanie domu na energię grzewczą}
+W celu wyznaczenia całkowitej liczby kolektorów słonecznych, konieczne jest wyznaczenie zapotrzebowania na energię grzewczą, aby zapewnić komfort cieplny. Przedstawiono pomieszczenia i ich powierzchnie oraz na podstawie przyjętych temperatur w pomieszczeniach założono całkowite zapotrzebowanie na energię grzewczą.
+
+\section{Informacje wstępne}
+Poniżej przedstawiono niezbędne dane na podstawie których założono zapotrzebowanie na ciepło:
+
+\begin{enumerate}[-]
+\item całkowita powierzchnia domu:
+$$P=237,75~m^2$$
+\item powierzchnia pomieszczeń nieogrzewanych:
+$$P_n=84,91~m^2$$
+\item powierzchnia pomieszczeń mieszkalnych ogrzewanych:
+$$P_m=114,71~m^2$$
+\item powierzchnia ogrzewanych pomieszczeń gospodarczych:
+$$P_g=38,13~m^2$$
+\end{enumerate}
+
+
+\textbf{Założone wartości temperatur:}
+\begin{enumerate}[1.]
+\item temperatura pomieszczeń mieszkalnych:
+$$t_m=21^\circ C$$
+\item temperatura pomieszczeń gospodarczych:
+$$t_g=13^\circ C$$
+\end{enumerate}
+
+\subsection{Całkowite zapotrzebowanie domu}
+
+\noindent Dane przekazane od inwestora dotyczące średnich wartości zapotrzebowania na energię grzewczą:
+\begin{itemize}
+\item pomieszczenia mieszkalne:
+$$Z_m=47~kWh/m^2/rok$$
+\item pomieszczenia gospodarcze:
+$$Z_g=35~kWh/m^2/rok$$
+\end{itemize}
+Zakładając, że sezon grzewczy trwa 2300 godzin całkowite zapotrzebowanie energii na poszczególne pomieszczenia wynosi:
+
+\begin{enumerate}[-]
+\item pomieszczenia mieszkalne:
+$$Z_m_c=Z_m\cdot P_m=47\cdot 114,71=5391,37~kWh/rok$$
+przeliczając na kW:
+$$x_m=\frac{5391,37~kWh}{2300~h}=2,43~kW$$
+\item pomieszczenia gospodarcze:
+$$Z_g_c=Z_g\cdot P_g=35\cdot 38,13=1334,55~kWh/rok$$
+przeliczając na kW:
+$$x_g=\frac{1334,55}{2300~h}=0,58~kW$$
+\end{enumerate}
+
+\begin{center}
+\textbf{Całkowite zapotrzebowanie domu}
+\end{center}
+$$X=x_m+x_c=2,43+0,58=3,01~kW$$
+
+\noindent Całkowite straty ciepła na zaizolowanych przewodach instalacyjnych założono na poziomie:
+$$Q_p=0,5~kW$$
+\subsection{Zestawienie danych oraz ostateczna liczba kolektorów}
+Uwzględniając całkowite straty zbiornika, zapotrzebowanie energii na dom oraz straty przesyłu na rurach instalacyjnych, wyznaczono ostateczną minimalną liczbę kolektorów płaskich. \\
+
+\noindent \textbf{Zestawienie danych wejściowych i wyjściowych:}
+
+\begin{itemize}
+\item Wymiary, objętość i powierzchnia całkowita zbiornika w kształcie walca:
+$$d=4~m$$
+$$H=3,9~m$$
+$$V=49~m^3$$
+$$A_c=74,14~m^2$$
+\item Całkowite straty cieplne zbiornika:
+$$Q_c=5181~W$$
+\item Całkowita powierzchnia domu jednorodzinnego i powierzchnia pomieszczeń ogrzewanych:
+$$P=237,75~m^2$$
+$$P_o_g=114,71+38,13=152,84~m^2$$
+\item Całkowite zapotrzebowanie domu na energię cieplną:
+$$X=3010~W$$
+\item Założone straty ciepła na przewodach instalacji:
+$$S_p=500~W$$
+\item Całkowite straty układu:
+$$S_c=Q_k+X+S_p=5181+3010+500=8691~W$$
+\end{itemize}
+Ostateczna minimalna ilość płaskich kolektorów cieczowych:
+$$n_k=\frac{Q_k+X+S_p}{Q_u}=\frac{5181+3010+500}{1132}=\frac{8691}{1132}=8~sztuk~minimum$$
+
+\section{Czas zasilania domu}
+Mając wyznaczone całkowite straty układu kolektory--zbiornik--instalacja--dom, możliwe jest wyznaczenie prawdopodobnego czasu zasilania energią zmagazynowaną w~zbiorniku pomieszczeń ogrzewanych. Poniżej przedstawiono obliczenia prowadzące do wyznaczenia tego czasu. \\
+
+\noindent Zgodnie ze wzorem (1.1), całkowita energia zgromadzona w zbiorniku wynosi:
+$$E=V\cdot \rho_w \cdot C_p \cdot \Delta T$$
+a po podstawieniu wartości:
+$$E=49\cdot 991,26\cdot 4179,70\cdot (45-10)=7105535559~J=7106~MJ$$
+znając energię zmagazynowaną w zbiorniku oraz całkowite straty układu, wyznaczono prawdobodobny czas zasilania domu:
+$$\tau=\frac{E}{S_c}=\frac{7105535559~J}{8691~W}=817574~s=227,1~h$$
+Należy pamiętać, że jest to czas ciągłego poboru ciepła i należy go skorygować o współczynnik dziennego poboru ciepła, który wynosi 1/3 dnia co stanowi 8 godzin.
+$$\tau=3\cdot 227=681~h$$
+Uwzględniając, że sezon grzewczy trwa 2300 godzin, magazyn ciepła pokryje 681 godzin co stanowi ok 1/3 całego okresu.
+\section{Koszt budowy i okres zwrotu}
+
+Poniżej przedstawiono koszty składowe i całkowity koszt budowy zbiornika (w zł):
+
+\begin{enumerate}[-]
+\item beton i zbrojenie:
+$$27500$$
+\item izolacje:
+$$31500$$
+\item inne materiały i prace:
+$$10000$$
+\item robocizna:
+$$25000$$
+\item całkowity koszt budowy zbiornika:
+$$\textbf{94000}$$
+\end{enumerate}
+Natomiast przewidywany koszt budowy systemu solarnego:
+
+\begin{enumerate}[-]
+\item kolektory z oprzyrządowaniem:
+$$49000\div 76000$$
+\item średni koszt całkowity:
+$$\textbf{62500}$$
+
+\end{enumerate} \\
+
+\begin{center}
+\textbf{Analiza zwrotu kosztów budowy układu}
+\end{center}
+W praktyce okazuje się, że ogrzewanie gazem domu o powierzchni około $240~m^2$ w~okresach szczytowych kosztuje ok 2500~zł/msc. Okres grzewczy to około 4 miesięcy. Z tego wynika, że roczne koszty gazowego ogrzewania wynoszą około 10000 zł. \\
+
+\noindent \textbf{Okres zwrotu kosztów instalacji}
+$$\tau_z=\frac{94000+62500}{10000}=16~lat$$
+
+\chapter{Podsumowanie i wnioski}
+
+
+\section{Wstęp}
+Z roku na rok rosną wymagania co do emisji szkodliwych związków uwalniających się podczas spalania paliw konwencjonalnych. Z tego powodu rośnie też zainteresowanie odnawialnymi źródłami energii, czyli tak zwaną zieloną energią, pochodzącą z powtarzających się procesów i zjawisk przyrodniczych. W ostatnich latach zauważono rozwój budowy domów energooszczędnych, których celem jest korzystanie z~energii odnawialnej w możliwie najwyższym stopniu. \\
+\indent Energia słoneczna w porównaniu do pozostałych źródeł energii charakteryzuje się dużym potencjałem. Wykorzystuje się ją przede wszystkim do przygotowania ciepłej wody użytkowej na potrzeby domowe, stosując kolektory słoneczne jako urządzenia przekształcające energię promieniowania słonecznego w ciepło użytkowe. Zaletą tego typu instalacji solernej jest prostota montażu, cicha praca oraz łatwość podłączenia do konwencjonalnych systemów grzewczych. Dzięki temu możliwe jest znaczne ograniczenie czasu pracy kotła konwekcyjnego, poprzez korzystanie w okresie letnim z~darmowej energii, którą dostarcza w nadmiarze Słońce. Inwestor, dla którego wykonywane zostały obliczenia projektowe przedstawione w pracy, zdecydował się na budowę tego typu instalacji od podstaw we własnym zakresie. Potwierdza to niski stopień komplikacji budowy układu mającego zasilać dom jednorodzinny. \\
+\indent Polska jest krajem, w którym rozwój odnwaialnego źródła energii promieniowania słonecznego wiąże się głównie z układami przygotowania CWU. Jednak istnieje wiele powodów, będących przyczyną małej ilości osób decydujących się na budowę takich instalacji. Główną przeszkodą są wysokie nakłady inwestycyjne, zbyt niskie dofinansowania lub ich brak, a także brak wiedzy na temat zalet energetyki odnawialnej w stosunku do konwencjonalnej. Ponadto przyzwyczajono się już do węgla kamiennego, który wciąż jest najczęściej stosowanym i najtańszym źródłem energii. \\
+\indent Głównym celem pracy magisterskiej były obliczenia projektowe oraz analiza energetyczna systemu grzewczego opartego na hybrydowym systemie wykorzystującym energię promieniowania słonecznego, dla domu jednorodzinnego. Starano się wskazać możliwości badanego układu, którego dane uzyskano dzięki uprzejmości inwestora, realizującego indywidualnie budowę. Projekt jest obecnie realizowany, a planowo ma zakończć się w październiku 2018. Celem pracy jest również zachęcenie do zastanowienia się nad tego typu układem. \\
+
+\section{Wnioski}
+Obliczenia projektowe prowadzono dla rzeczywistej instalacji grzewczej, składającej się ze zbiornika magazynowego o dużej objętości zasilanego układem płaskich cieczowych kolektorów słonecznych. Dane dotyczące kształtu zbiornika, jego objętości, wykorzystanych materiałów do jego budowy oraz miejsca umieszczenia, otrzymano od inwestora. Zdecydowano, że magazynowanie energii cieplnej realizowane będzie poprzez wykorzystanie pojemności cieplnej czynnika. \\
+\indent Jako czynnik magazynujący energię wybrano wodę, a wybór ten uzasadniono. Zdecydowano również, że obliczenia wykonane zostaną schematycznie zakładając warunki ustalone zarówno w~zbiorniku jak i jego otoczeniu. Każde obliczenia wymagają wstępnych założeń, toteż przedstawiono je w pierwszej części pracy. Założenia te dotyczyły średniej temperatury wody w~zbiorniku, jej ciśnienia, a także średnich temperatur otoczenia w~danym okresie. \\
+\indent Początkowe obliczenia bilansowe zbiornika miały na celu określenie strat w przypadku, kiedy temperatura wody była równa założonej ($\rm{65^\circ C}$), a temperatura otoczenia równa średniej temperaturze w okresie grzewczym: grunt $\rm{8^\circ C}$, powietrze $\rm{7^\circ C}$. W efekcie uzyskano straty całkowite wielkości $\rm{2665~W}$. Należy zwrócić uwagę na to, że straty te związane są z prznikaniem ciepła przez poszczególne przegrody zbiornika w warunkach najmniej korzystnych, czyli kiedy różnica temperatur między wodą a otoczeniem jest najwyższa. Zatem w okresie letnim, czyli w czasie ładowania zbiornika za pośrednictwem energii słonecznej, straty te byłyby o wiele mniejsze, ponieważ temperatura gruntu i powietrza byłaby wyższa. Obliczenia bilansowe przeprowadzono dla uproszczonego modelu zbiornika, jednak w porównaniu z jego rzeczywistym kształtem błąd byłby niewielki. Jeżeli chodzi o miejsce umieszczenia zbiornika, wybrano grunt, ponieważ jego temperatura poniżej $\rm{1~m}$ w skali roku jest mniej więcej stała i wynosi około $\rm{8^\circ C}$. \\
+\indent W części obliczeniowej parametrów kolektora słonecznego skorzystano z programu do symulacji natężenia promieniowania w zadanym okresie pracy kolektora. Podczas obliczeń zauważono, że dla średniego natężenia promieniowania w założonym okresie działania kolektorów, tj. 01.06--30.09, temperatura absorbera określona na około $\rm{47,5^\circ C}$. To spowodowało, że konieczna była zmiana założeń dotyczących maksymalnej temperatury w zbiorniku. Oczywiście należy zwrócić uwagę na fakt, że jest to temperatura dla średniej wartości natężenia promieniowania w całym okresie. W przypadku lipca i sierpnia natężenie jest znacznie wyższe niż w czerwcu czy wrześniu. Dlatego też można stwierdzić, że powierzchnia absorbera osiągałaby wyższą temperaturę, nawet do $\rm{70\div 80^\circ C}$. Zmiana temperatury wody w zbiorniku wymusiła przeprowadzenie obliczeń korekcyjnych, w celu wyznaczenia średnich strat cieplnych na podstawie których projektowano wydajność grzewczą systemu solarnego, czyli mocy użytecznej kolektora i ich wymaganej ilości.\\
+ \ident Zadaniem było ustalenie czy panele słoneczne i magazyn ciepła są w stanie zaspokoić zapotrzebowanie ciepła w całym sezonie grzewczym bez wspomagania dodatkowym źródłem ciepła. Z obliczeń wynika, że układ zapewni energię na 1/3 sezonu grzewczego. Przez pozostałe 2/3 okresu zaleca się zainstalowanie układu wspomagającego; pompy ciepła, pieca lub kotła kondensacyjnego. W projekcie inwestor przewidział instalacje pieca gazowego, jednak zastosowanie pompy ciepła byłoby dużo korzystniejsze, gdyż zbiornik wodny zasilany systemem solarnym jest idealnym dolnym źródłem ciepła. Pompa ciepła przy wysokiej temperaturze dolnego źródła osiągnie bardzo wysoki współczynnik wydajności grzewczej, co bardzo obniży wymaganą moc sprężarki, a tym samym koszty.\\
+\ident Wreszcie uwzględniono również straty ciepła domu, które zostały założone na podstawie danych dostarczonych przez inwestora. Po zsumowaniu wszystkich strat, wyznaczono minimalną liczbę koelktorów na 8 sztuk. Należy pamiętać że jest to ilość minimalna, aby zbilansować straty całej instalacji w warunkach uśrednionych. Oznacza to, że kolektorów powinno być więcej, czyli np 12. Ostatecznie obliczono czas, jaki magazyn ciepła będzie zdolny pełnić swoją funkcję po odłączenu zasilania (promieniowania słonecznego). Obliczenia te niestety obarczone są dużym błędem, ponieważ wykonane zostały dla warunków ustalonych. Pozwalają jednak określić rząd wartości i tym samym będą ważną informacją dla inwestora w drugim etapie budowy. Czas potrzebny do całkowitego wychłodzenia zbiornika (Tw - Tot)= (45 - 10), bez uwzględnienia ogrzewania zbiornika energią słoneczną, określono na $\rm{681~h}$, co stanowi 1/3 sezonu grzewczego.\\
+
+\begin{flushleft}
+\begin{thebibliography}{99}
+\bibitem{szczygiel} Szczygieł I., \emph{Konwekcyjny przepływ ciepła}, Wydawnictwo Politechniki Śląskiej, Gliwice 2013, ISBN 978-83-7880-161-0
+\bibitem{js}Szargut J., \emph{Termodynamika}, Wydawnictwo Naukowe PWN, Warszawa 2013, ISBN 978-83-01-13086-2
+
+\bibitem{rd} Domański R., \emph{Możliwości i Problemy Magazynowania Energii Cieplnej}, Biuletyn Informacyjny Instytutu Techniki Cieplnej Politechniki Warszawskiej
+
+\bibitem{tae} Pomorski M., Nemś A., Gnutek Z., \emph{Techniki Akumulacji Energii - cz. 2}, 2015, Politechnika Wrocławska, źródło: www.informacjainstal.com.pl
+
+\bibitem{mec} Mania T., Kawa J., \emph{Inżynieria Instalacji Magazynowania Energii Ciepła}, Bydgoszcz 2016, ISBN 978-83-64423-37-6
+
+\bibitem{sie} Pluta Z., \emph{Słoneczne Instalacje Energetyczne}, Oficyna Wydawnicza Politechniki Warszawskiej, Warszawa 2003, ISBN 83-7207-411-9
+
+\bibitem{kostowski} Kostowski E., \emph{Przepływ ciepła}, Wydawnictwo Politechniki Śląskiej, Gliwice 2006, ISBN 978-83-7335-367-1
+
+\bibitem{cengel} Cengel Y.A., \emph{Heat Transfer: A Practical Approach,2nd ed.}, McGraw-Hill 2002
+
+\end{thebibliography}
+\end{flushleft}
+
+
+\end{document}
